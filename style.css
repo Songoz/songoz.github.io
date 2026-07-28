@@ -2,7 +2,7 @@ body{
 
 margin:0;
 
-font-family:Arial,sans-serif;
+font-family:'Inter',sans-serif;
 
 background:#f7f9f8;
 
@@ -10,6 +10,10 @@ color:#333;
 
 }
 
+h1,h2,h3{
+
+font-family:'Playfair Display', serif;
+}
 nav{
 
 display:flex;
@@ -18,11 +22,17 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:20px 60px;
+padding:22px 70px;
 
 background:white;
 
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.06);
 
 }
 
