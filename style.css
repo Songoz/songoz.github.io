@@ -35,6 +35,19 @@ z-index:1000;
 box-shadow:0 5px 20px rgba(0,0,0,0.06);
 
 }
+nav h2{
+
+font-size:30px;
+
+font-weight:700;
+
+color:#2F5D50;
+
+margin:0;
+
+letter-spacing:1px;
+
+}
 
 nav ul{
 
@@ -42,7 +55,13 @@ display:flex;
 
 list-style:none;
 
-gap:30px;
+gap:40px;
+
+margin:0;
+
+padding:0;
+
+align-items:center;
 
 }
 
@@ -50,9 +69,18 @@ nav a{
 
 text-decoration:none;
 
-color:#444;
+color:#2D2D2D;
 
-font-weight:bold;
+font-weight:500;
+
+font-size:16px;
+
+transition:0.3s;
+
+}
+nav a:hover{
+
+color:#2F5D50;
 
 }
 
