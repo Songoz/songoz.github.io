@@ -63,6 +63,36 @@ text-align:left;
     pointer-events:none;
 
 }
+#about .section-number{
+
+left:-20px;
+top:-20px;
+
+}
+#portfolio .section-number{
+
+left:75%;
+top:-20px;
+
+}
+#standards .section-number{
+
+left:-10px;
+top:40px;
+
+}
+#skills .section-number{
+
+left:72%;
+top:10px;
+
+}
+#contact .section-number{
+
+left:-15px;
+top:-20px;
+
+}
 body{
 
 margin:0;
