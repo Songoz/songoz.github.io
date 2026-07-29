@@ -30,6 +30,16 @@ max-width:1100px;
 margin:auto;
 
 }
+.section-number{
+    font-family:'Inter',sans-serif;
+    font-size:18px;
+    font-weight:600;
+    color:#CC6600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:block;
+}
 body{
 
 margin:0;
@@ -426,5 +436,62 @@ transform:rotate(5deg);
 .polaroid:hover{
 
 transform:translateY(-8px) rotate(-2deg);
+
+}
+/* ---------- REPORTING STANDARDS ---------- */
+
+.standards-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+margin:60px 0;
+
+}
+
+.standard{
+
+background:white;
+
+padding:35px;
+
+font-size:22px;
+
+font-weight:600;
+
+text-align:center;
+
+border-left:5px solid #CC6600;
+
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+transition:.3s;
+
+}
+
+.standard:hover{
+
+transform:translateY(-6px);
+
+}
+
+.practice{
+
+margin-top:70px;
+
+max-width:750px;
+
+}
+
+.practice h3{
+
+font-size:34px;
+
+color:#4A5D23;
+
+margin-bottom:20px;
 
 }
