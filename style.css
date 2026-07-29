@@ -572,9 +572,9 @@ display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
-gap:25px;
+gap:10px;
 
-margin:60px 0;
+margin:40px 0;
 
 }
 
@@ -621,13 +621,13 @@ left:-20px;
 
 top:30px;
 
-font-size:180px;
+font-size:80px;
 
 font-weight:700;
 
-color:#000;
+color:#4A5D23;
 
-opacity:.035;
+opacity:1;
 
 letter-spacing:10px;
 
