@@ -5,9 +5,22 @@ scroll-behavior:smooth;
 }
 .section{
 
-padding:120px 10%;
+padding:150px 10%;
 
 position:relative;
+
+}
+.section h2{
+
+font-family:'Playfair Display', serif;
+
+font-size:54px;
+
+color:#4A5D23;
+
+margin-bottom:40px;
+
+text-align:center;
 
 }
 .content{
