@@ -441,6 +441,74 @@ font-size:20px;
 color:#555;
 
 }
+.about-photo{
+
+    margin-top:50px;
+
+    margin-left:25px;
+
+}
+
+.about-photo img{
+
+    width:170px;
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid #F8F5ED;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+.about-photo{
+
+    position:relative;
+
+    display:inline-block;
+
+    margin-top:45px;
+
+}
+
+.about-photo::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    background:#A8B58A;
+
+    opacity:.18;
+
+    border-radius:50%;
+
+    left:-18px;
+    top:18px;
+
+    z-index:0;
+
+}
+
+.about-photo img{
+
+    position:relative;
+
+    width:170px;
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    z-index:2;
+
+}
 /* ---------- PORTFOLIO COLLAGE ---------- */
 
 .portfolio-intro{
