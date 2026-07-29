@@ -65,7 +65,7 @@ text-align:left;
 }
 #about .section-number{
 
-left:-20px;
+left:-30px;
 top:-20px;
 
 }
@@ -77,8 +77,8 @@ top:-20px;
 }
 #standards .section-number{
 
-left:-10px;
-top:40px;
+left:-30px;
+top:-20px;
 
 }
 #skills .section-number{
@@ -90,7 +90,7 @@ top:10px;
 #contact .section-number{
 
 left:-30px;
-top:-15px;
+top:-20px;
 
 }
 body{
