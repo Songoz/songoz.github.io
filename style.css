@@ -353,6 +353,31 @@ border-left:4px solid #CC6600;
 padding-left:45px;
 
 }
+.framework{
+
+padding:40px 0;
+
+border-bottom:1px solid rgba(0,0,0,.15);
+
+}
+
+.framework h3{
+
+font-size:42px;
+
+color:#4A5D23;
+
+margin-bottom:8px;
+
+}
+
+.framework p{
+
+font-size:20px;
+
+color:#555;
+
+}
 /* ---------- PORTFOLIO COLLAGE ---------- */
 
 .portfolio-intro{
@@ -523,6 +548,37 @@ transition:.3s;
 .standard:hover{
 
 transform:translateY(-6px);
+
+}
+#standards{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+#standards::before{
+
+content:"REPORTING";
+
+position:absolute;
+
+left:-20px;
+
+top:30px;
+
+font-size:180px;
+
+font-weight:700;
+
+color:#000;
+
+opacity:.035;
+
+letter-spacing:10px;
+
+pointer-events:none;
 
 }
 
