@@ -252,13 +252,13 @@ height:380px;
 
 background:#A8B58A;
 
-opacity:0.25;
+opacity:0.45;
 
-border-radius:58% 42% 63% 37%;
+border-radius:58% 52% 63% 57%;
 
 top:40px;
 
-left:-60px;
+left:-100px;
 
 z-index:0;
 
@@ -379,7 +379,7 @@ line-height:.95;
 
 margin-top:10px;
 
-text-align:left;
+text-align:center;
 
 }
 
