@@ -738,7 +738,7 @@ margin-bottom:20px;
 
 .quote-section{
 
-    padding:240px 12%;
+    padding:150px 12%;
     background:#F8F5ED;
     display:flex;
     justify-content:center;
@@ -753,7 +753,7 @@ margin-bottom:20px;
     margin:0;
 
     font-family:'Playfair Display', serif;
-    font-size:55px;
+    font-size:50px;
     line-height:1.25;
     font-weight:500;
 
@@ -787,7 +787,7 @@ margin-bottom:20px;
     margin:auto;
 
     font-family:'Playfair Display', serif;
-    font-size:55px;
+    font-size:50px;
     line-height:1.18;
     color:#171717;
     font-weight:500;
