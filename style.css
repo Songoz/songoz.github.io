@@ -305,6 +305,54 @@ background:#4A5D23;
 transform:translateY(-3px);
 
 }
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1.5fr;
+
+gap:120px;
+
+align-items:start;
+
+}
+
+.about-title h2{
+
+font-size:92px;
+
+line-height:.95;
+
+margin-top:10px;
+
+text-align:left;
+
+}
+
+.about-text{
+
+font-size:22px;
+
+line-height:2;
+
+max-width:700px;
+
+}
+
+.about-text p{
+
+margin-bottom:35px;
+
+}
+
+.about-text{
+
+border-left:4px solid #CC6600;
+
+padding-left:45px;
+
+}
 /* ---------- PORTFOLIO COLLAGE ---------- */
 
 .portfolio-intro{
