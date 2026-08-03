@@ -935,43 +935,67 @@ color:#F8F5ED;
 max-width:700px;
 
 }
+#contact{
 
+background:#4A5D23;
+
+color:#F8F5ED;
+
+}
+#contact h2{
+
+color:white;
+
+font-size:54px;
+
+}
 .contact-intro{
 
-font-size:24px;
+color:rgba(255,255,255,.9);
+
+font-size:20px;
 
 line-height:1.8;
 
-margin-bottom:60px;
+max-width:650px;
 
 }
-
 .contact-links{
 
 display:flex;
 
-flex-direction:column;
+flex-wrap:wrap;
 
-gap:25px;
+gap:18px;
+
+margin-top:45px;
 
 }
-
 .contact-links a{
 
-font-size:28px;
+display:inline-block;
+
+padding:16px 32px;
+
+border:2px solid rgba(255,255,255,.9);
+
+border-radius:999px;
 
 text-decoration:none;
 
-color:#4A5D23;
+color:white;
+
+font-weight:500;
+
+letter-spacing:.5px;
 
 transition:.3s;
 
 }
-
 .contact-links a:hover{
 
-color:#CC6600;
+background:white;
 
-padding-left:12px;
+color:#4A5D23;
 
 }
