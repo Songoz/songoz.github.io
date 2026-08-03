@@ -5,7 +5,7 @@ scroll-behavior:smooth;
 }
 .section{
 
-    padding:100px 10%;
+    padding:75px 10%;
     position:relative;
     overflow:hidden;
 
@@ -662,7 +662,7 @@ transform:translateY(-8px) rotate(-2deg);
 }
 /* ===========================
    FRAMEWORKS =========================== */
-.frameworks-grid{
+.framework-grid{
 
 display:grid;
 
@@ -673,7 +673,73 @@ gap:30px;
 margin-top:70px;
 
 }
-#frameworks{
+.framework-card{
+
+height:280px;
+
+perspective:1000px;
+
+}
+.framework-card-inner{
+
+position:relative;
+
+width:100%;
+
+height:100%;
+
+transition:transform .7s ease;
+
+transform-style:preserve-3d;
+
+}
+.framework-card:hover .framework-card-inner{
+
+transform:rotateY(180deg);
+
+}
+.framework-front,
+.framework-back{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+backface-visibility:hidden;
+
+border:1px solid rgba(0,0,0,.08);
+
+background:#FDFBF7;
+
+padding:45px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+.framework-front{
+
+color:#4A5D23;
+
+}
+.framework-back{
+
+transform:rotateY(180deg);
+
+background:#A8B58A;
+
+color:white;
+
+}
+#framework{
 
 position:relative;
 
@@ -681,7 +747,7 @@ overflow:hidden;
 
 }
 
-#frameworks::before{
+#framework::before{
 
 content:"REPORTING";
 
@@ -773,23 +839,12 @@ transform:translateY(-6px);
 background:#ffffff;
 
 }
-
-.quote-section{
-
-    padding:150px 12%;
-    background:#F8F5ED;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:left;
-
-}
 .quote-section{
 
 position:relative;
 
-padding:220px 12%;
-
+padding:120px 10%;
+background:#F8F5ED;
 display:flex;
 
 justify-content:center;
@@ -799,6 +854,26 @@ align-items:center;
 text-align:center;
 
 overflow:hidden;
+    background-image:
+linear-gradient(rgba(34,34,34,.55),rgba(34,34,34,.55)),
+url("images/the_hills_have_eyes.jpeg");
+
+background-size:cover;
+
+background-position:center;
+
+padding:170px 12%;
+
+position:relative;
+
+}
+.quote-overlay{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
 
 }
 .quote-section::before{
