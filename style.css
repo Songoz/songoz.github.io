@@ -775,15 +775,16 @@ margin-bottom:20px;
 }
 .skill-card{
 
-background:#ffffff;
+background:#FDFBF7;
 
-padding:45px;
+padding:50px;
 
-border-top:5px solid #CC6600;
+border-top:2px solid #CC6600;
+border-bottom:1px solid rgba(0,0,0,.08);
 
-transition:.3s;
+box-shadow:none;
 
-box-shadow:0 15px 40px rgba(0,0,0,.06);
+transition:.35s;
 
 }
 .skill-card h3{
@@ -810,7 +811,9 @@ line-height:1.5;
 }
 .skill-card:hover{
 
-transform:translateY(-8px);
+transform:translateY(-6px);
+
+background:#ffffff;
 
 }
 
