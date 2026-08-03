@@ -78,7 +78,7 @@ text-align:left;
 }
 #about .section-number{
 
-left:-30px;
+left:-90px;
 top:-20px;
 
 }
@@ -90,7 +90,7 @@ top:-20px;
 }
 #frameworks .section-number{
 
-left:-30px;
+left:-90px;
 top:-20px;
 
 }
@@ -102,7 +102,7 @@ top:10px;
 }
 #contact .section-number{
 
-left:-30px;
+left:-90px;
 top:-20px;
 
 }
@@ -443,6 +443,13 @@ grid-template-columns:1fr 1.5fr;
 gap:80px;
 
 align-items:start;
+
+}
+.about-title{
+
+position:relative;
+
+z-index:2;
 
 }
 
