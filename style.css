@@ -736,7 +736,7 @@ color:#4A5D23;
 
 transform:rotateY(180deg);
 
-background:#2B2F2A;
+background:#050505;
 
 color:white;
 
@@ -1041,7 +1041,7 @@ background-position:center 65%;
 padding:120px 12%;
 
 position:relative;
-    min-height:70vh;
+    min-height:80vh;
 
     width:100%;
 
@@ -1114,9 +1114,10 @@ max-width:700px;
 }
 #contact{
 
-background:#2B2F2A;
+background:#050505;
 
 color:#F8F5ED;
+
     min-height:100vh;
 
 }
