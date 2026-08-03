@@ -857,13 +857,9 @@ overflow:hidden;
 linear-gradient(rgba(40,50,25,.65),rgba(40,50,25,.65)),
 url("images/the_hills_have_eyes.jpeg");
 
-background-size:contain;
-background-repeat:no-repeat;
-background-color:#2E3A22;
+background-position:center 35%;
 
-background-position:center;
-
-padding:170px 12%;
+padding:120px 12%;
 
 position:relative;
 
