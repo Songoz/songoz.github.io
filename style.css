@@ -681,7 +681,7 @@ overflow:hidden;
 
 }
 
-#standards::before{
+#frameworks::before{
 
 content:"REPORTING";
 
@@ -719,7 +719,7 @@ text-transform:uppercase;
 color:#666;
 
 }
-.skills-grid{
+.how-i-work-grid{
 
 display:grid;
 
@@ -730,7 +730,7 @@ gap:40px;
 margin-top:80px;
 
 }
-.skill-card{
+.how-i-work-card{
 
 background:#FDFBF7;
 
@@ -744,7 +744,7 @@ box-shadow:none;
 transition:.35s;
 
 }
-.skill-card h3{
+.how-i-work-card h3{
 
 font-size:18px;
 
@@ -757,7 +757,7 @@ margin-bottom:30px;
 color:#4A5D23;
 
 }
-.skill-card p{
+.how-i-work-card p{
 
 font-size:20px;
 
@@ -766,7 +766,7 @@ margin:18px 0;
 line-height:1.5;
 
 }
-.skill-card:hover{
+.how-i-work-card:hover{
 
 transform:translateY(-6px);
 
