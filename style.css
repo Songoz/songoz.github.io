@@ -854,14 +854,17 @@ text-align:center;
 
 overflow:hidden;
     background-image:
-linear-gradient(rgba(34,34,34,.55),rgba(34,34,34,.55)),
+linear-gradient(rgba(40,50,25,.65),rgba(40,50,25,.65)),
 url("images/the_hills_have_eyes.jpeg");
 
-background-size:cover;
+background-size:contain;
+background-repeat:no-repeat;
+background-color:#2E3A22;
 
-background-position:center;
+background-position:center 35%;
 
 padding:170px 12%;
+    min-height:70vh;
 
 position:relative;
 
@@ -874,7 +877,11 @@ position:relative;
 
 max-width:900px;
 
-margin:auto;
+    display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 text-align:center;
 
