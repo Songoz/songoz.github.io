@@ -1116,6 +1116,7 @@ max-width:700px;
 background:#2B2F2A;
 
 color:#F8F5ED;
+    min-height:100vh;
 
 }
 #contact h2{
