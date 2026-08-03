@@ -413,7 +413,7 @@ display:grid;
 
 grid-template-columns:1fr 1.5fr;
 
-gap:120px;
+gap:80px;
 
 align-items:start;
 
@@ -495,8 +495,8 @@ color:#555;
 
     position:absolute;
 
-    width:200px;
-    height:200px;
+    width:360px;
+height:360px;
 
     background:#A8B58A;
 
@@ -504,8 +504,8 @@ color:#555;
 
     border-radius:50%;
 
-    left:-18px;
-    top:18px;
+    left:-20px;
+    top:20px;
 
     z-index:0;
 
@@ -515,8 +515,8 @@ color:#555;
 
     position:relative;
 
-    width:200px;
-    height:200px;
+  width:320px;
+height:320px;
 
     object-fit:cover;
 
