@@ -662,7 +662,7 @@ transform:translateY(-8px) rotate(-2deg);
 }
 /* ===========================
    FRAMEWORKS =========================== */
-.framework-grid{
+.frameworks-grid{
 
 display:grid;
 
@@ -704,7 +704,7 @@ letter-spacing:10px;
 pointer-events:none;
 
 }
-.framework-front span{
+.frameworks-front span{
 
 display:block;
 
