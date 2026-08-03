@@ -369,16 +369,6 @@ font-weight:600;
 margin-bottom:22px;
 
 }
-
-.hero p{
-
-font-size:20px;
-
-line-height:1.7;
-
-max-width:600px;
-
-}
 .hero::before{
 
 content:"";
@@ -405,7 +395,11 @@ z-index:-1;
 
 button{
 
-padding:16px 35px;
+padding:18px 42px;
+
+font-weight:600;
+
+letter-spacing:.5px;
 
 background:#CC6600;
 
