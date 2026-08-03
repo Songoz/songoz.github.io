@@ -796,7 +796,7 @@ gap:40px;
 margin-top:80px;
 
 }
-.how-i-work-card{
+.how-card{
 
 background:#FDFBF7;
 
@@ -810,7 +810,7 @@ box-shadow:none;
 transition:.35s;
 
 }
-.how-i-work-card h3{
+.how-card h3{
 
 font-size:18px;
 
@@ -823,7 +823,7 @@ margin-bottom:30px;
 color:#4A5D23;
 
 }
-.how-i-work-card p{
+.how-card p{
 
 font-size:20px;
 
@@ -832,7 +832,7 @@ margin:18px 0;
 line-height:1.5;
 
 }
-.how-i-work-card:hover{
+.how-card:hover{
 
 transform:translateY(-6px);
 
