@@ -88,13 +88,13 @@ left:75%;
 top:-20px;
 
 }
-#standards .section-number{
+#frameworks .section-number{
 
 left:-30px;
 top:-20px;
 
 }
-#skills .section-number{
+#how-i-work .section-number{
 
 left:72%;
 top:10px;
@@ -467,31 +467,6 @@ border-left:4px solid #CC6600;
 padding-left:45px;
 
 }
-.framework{
-
-padding:40px 0;
-
-border-bottom:1px solid rgba(0,0,0,.15);
-
-}
-
-.framework h3{
-
-font-size:42px;
-
-color:#4A5D23;
-
-margin-bottom:8px;
-
-}
-
-.framework p{
-
-font-size:20px;
-
-color:#555;
-
-}
 .about-photo{
 
     position:relative;
@@ -673,44 +648,7 @@ transform:translateY(-8px) rotate(-2deg);
 }
 /* ---------- REPORTING STANDARDS ---------- */
 
-.standards-grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:10px;
-
-margin:40px 0;
-
-}
-
-.standard{
-
-background:#A8B58A;
-
-padding:35px;
-
-font-size:22px;
-
-font-weight:600;
-
-text-align:center;
-
-border-left:5px solid #CC6600;
-
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-
-transition:.3s;
-
-}
-
-.standard:hover{
-
-transform:translateY(-6px);
-
-}
-#standards{
+#frameworks{
 
 position:relative;
 
