@@ -728,7 +728,21 @@ letter-spacing:10px;
 pointer-events:none;
 
 }
+.framework-front span{
 
+display:block;
+
+margin-top:15px;
+
+font-size:14px;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+color:#666;
+
+}
 .practice{
 
 margin-top:70px;
