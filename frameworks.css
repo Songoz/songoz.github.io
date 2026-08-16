@@ -165,23 +165,18 @@ body {
 
 .tree-area {
     position: sticky;
-
     top: 110px;
-
     text-align: center;
 }
 
 .tree-label {
     color: #CC6600;
-
     font-size: 12px;
-
     font-weight: 700;
-
     letter-spacing: 3px;
-
     margin-bottom: 20px;
 }
+
 
 /* =========================================
    BIG INTERACTIVE TREE
@@ -197,10 +192,8 @@ body {
     align-items: center;
 
     position: relative;
-
     overflow: visible;
 }
-
 
 .big-tree {
     width: min(620px, 100%);
@@ -229,10 +222,13 @@ body {
    ========================================= */
 
 .tree-trunk {
-    fill: #321f11;
+    fill: #5c4322;
 
-    stroke: #344419;
+    stroke: #5c4322;
     stroke-width: 3;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
 
     transform-origin: center bottom;
 
@@ -241,6 +237,7 @@ body {
         filter 0.8s ease;
 }
 
+
 /* =========================================
    MAIN BRANCHES
    ========================================= */
@@ -248,7 +245,7 @@ body {
 .tree-branch {
     fill: none;
 
-    stroke: #321f11;
+    stroke: #5c4322;
     stroke-width: 22;
 
     stroke-linecap: round;
@@ -256,6 +253,8 @@ body {
 
     opacity: 0.98;
 }
+
+
 /* =========================================
    SMALL BRANCHES
    ========================================= */
@@ -263,13 +262,15 @@ body {
 .tree-small-branch {
     fill: none;
 
-    stroke: #321f11;
+    stroke: #5c4322;
     stroke-width: 13;
 
     stroke-linecap: round;
 
     opacity: 0.95;
 }
+
+
 /* =========================================
    ROOTS
    ========================================= */
@@ -277,7 +278,7 @@ body {
 .root {
     fill: none;
 
-    stroke: #321f11;
+    stroke: #5c4322;
     stroke-width: 17;
 
     stroke-linecap: round;
@@ -291,6 +292,8 @@ body {
    ========================================= */
 
 .leaf {
+    cursor: pointer;
+
     fill: #6F8535;
 
     stroke: #4A5D23;
@@ -304,7 +307,6 @@ body {
         opacity 0.4s ease,
         fill 0.4s ease;
 }
-
 
 /* Different shades make the tree feel organic */
 
