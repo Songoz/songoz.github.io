@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reporting Frameworks | Rufaro Songore</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Our new CSS file -->
+    <link rel="stylesheet" href="frameworks.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+
+    <nav class="framework-nav">
+
+        <div class="nav-name">
+            Rufaro Songore
+        </div>
+
+        <a href="index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         PAGE INTRODUCTION
+         ========================================= -->
+
+    <header class="framework-hero">
+
+        <p class="eyebrow">
+            SUSTAINABILITY REPORTING
+        </p>
+
+        <h1>
+            Reporting Frameworks
+        </h1>
+
+        <p class="hero-description">
+            Explore the frameworks, reporting principles and data
+            approaches that shape my work in sustainability reporting.
+        </p>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN INTERACTIVE AREA
+         ========================================= -->
+
+    <main class="reporting-lab">
+
+
+        <!-- =====================================
+             LEFT SIDE — TREE
+             ===================================== -->
+
+        <section class="tree-area">
+
+            <p class="tree-label">
+                REPORTING ECOSYSTEM
+            </p>
+
+            <div class="tree-container">
+
+                <!-- SVG TREE -->
+
+                <svg
+                    class="tree-svg"
+                    viewBox="0 0 500 650"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <!-- Tree trunk -->
+
+                    <path
+                        class="tree-trunk"
+                        d="M250 600
+                           C245 520 250 450 250 380
+                           C250 330 220 280 180 240
+                           M250 380
+                           C250 320 280 270 330 220
+                           M250 450
+                           C210 400 160 370 120 330
+                           M250 430
+                           C300 380 350 340 390 290"
+                    />
+
+                    <!-- Branches -->
+
+                    <path
+                        class="tree-branch"
+                        d="M180 240
+                           C140 200 120 170 105 130"
+                    />
+
+                    <path
+                        class="tree-branch"
+                        d="M330 220
+                           C360 180 390 150 410 110"
+                    />
+
+                    <path
+                        class="tree-branch"
+                        d="M120 330
+                           C80 300 65 270 55 230"
+                    />
+
+                    <path
+                        class="tree-branch"
+                        d="M390 290
+                           C425 260 440 225 450 185"
+                    />
+
+
+                    <!-- GRI LEAF -->
+
+                    <g
+                        class="tree-leaf framework-leaf"
+                        data-framework="gri"
+                        id="leaf-gri"
+                    >
+
+                        <ellipse
+                            cx="105"
+                            cy="125"
+                            rx="30"
+                            ry="45"
+                            transform="rotate(-35 105 125)"
+                        />
+
+                        <text
+                            x="105"
+                            y="132"
+                            text-anchor="middle"
+                        >
+                            GRI
+                        </text>
+
+                    </g>
+
+
+                    <!-- ESRS LEAF -->
+
+                    <g
+                        class="tree-leaf framework-leaf"
+                        data-framework="esrs"
+                        id="leaf-esrs"
+                    >
+
+                        <ellipse
+                            cx="410"
+                            cy="105"
+                            rx="30"
+                            ry="45"
+                            transform="rotate(35 410 105)"
+                        />
+
+                        <text
+                            x="410"
+                            y="112"
+                            text-anchor="middle"
+                        >
+                            ESRS
+                        </text>
+
+                    </g>
+
+
+                    <!-- ISSB LEAF -->
+
+                    <g
+                        class="tree-leaf framework-leaf"
+                        data-framework="issb"
+                        id="leaf-issb"
+                    >
+
+                        <ellipse
+                            cx="55"
+                            cy="225"
+                            rx="30"
+                            ry="45"
+                            transform="rotate(-55 55 225)"
+                        />
+
+                        <text
+                            x="55"
+                            y="232"
+                            text-anchor="middle"
+                        >
+                            ISSB
+                        </text>
+
+                    </g>
+
+
+                    <!-- EU TAXONOMY LEAF -->
+
+                    <g
+                        class="tree-leaf framework-leaf"
+                        data-framework="taxonomy"
+                        id="leaf-taxonomy"
+                    >
+
+                        <ellipse
+                            cx="450"
+                            cy="180"
+                            rx="35"
+                            ry="50"
+                            transform="rotate(55 450 180)"
+                        />
+
+                        <text
+                            x="450"
+                            y="187"
+                            text-anchor="middle"
+                        >
+                            EU
+                        </text>
+
+                    </g>
+
+
+                </svg>
+
+            </div>
+
+
+            <p class="tree-instruction">
+                Select a framework to explore
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             RIGHT SIDE — DASHBOARD
+             ===================================== -->
+
+        <section class="dashboard-area">
+
+
+            <!-- Dashboard header -->
+
+            <div class="dashboard-header">
+
+                <p class="dashboard-kicker">
+                    FRAMEWORK EXPLORER
+                </p>
+
+                <h2 id="framework-title">
+                    Select a framework
+                </h2>
+
+                <p id="framework-description">
+                    Click one of the leaves on the reporting tree
+                    to explore my approach to sustainability reporting.
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 DASHBOARD TABS
+                 ================================= -->
+
+            <div
+                class="dashboard-tabs"
+                id="dashboard-tabs"
+            >
+
+                <button
+                    class="tab-button active"
+                    data-tab="overview"
+                >
+                    Overview
+                </button>
+
+                <button
+                    class="tab-button"
+                    data-tab="data"
+                >
+                    Data
+                </button>
+
+                <button
+                    class="tab-button"
+                    data-tab="approach"
+                >
+                    My Approach
+                </button>
+
+                <button
+                    class="tab-button"
+                    data-tab="report"
+                >
+                    My Report
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 DASHBOARD CONTENT
+                 ================================= -->
+
+            <div class="dashboard-content">
+
+
+                <!-- OVERVIEW -->
+
+                <div
+                    class="tab-content active"
+                    id="overview"
+                >
+
+                    <span class="content-number">
+                        01
+                    </span>
+
+                    <h3>
+                        What is this framework?
+                    </h3>
+
+                    <p id="overview-text">
+                        Select a framework from the tree to
+                        explore its role in sustainability reporting.
+                    </p>
+
+                    <div class="concept-grid">
+
+                        <div class="concept-card">
+                            <span>01</span>
+                            <strong>Framework</strong>
+                            <p id="concept-one">
+                                —
+                            </p>
+                        </div>
+
+                        <div class="concept-card">
+                            <span>02</span>
+                            <strong>Focus</strong>
+                            <p id="concept-two">
+                                —
+                            </p>
+                        </div>
+
+                        <div class="concept-card">
+                            <span>03</span>
+                            <strong>Application</strong>
+                            <p id="concept-three">
+                                —
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DATA -->
+
+                <div
+                    class="tab-content"
+                    id="data"
+                >
+
+                    <span class="content-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Reporting Data
+                    </h3>
+
+                    <p>
+                        A demonstration of how sustainability
+                        information can be translated into
+                        decision-useful visualisations.
+                    </p>
+
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <span>ILLUSTRATIVE DATA</span>
+
+                                <h4>
+                                    GHG Emissions
+                                </h4>
+                            </div>
+
+                            <strong>
+                                tCO₂e
+                            </strong>
+
+                        </div>
+
+
+                        <div class="bar-chart">
+
+                            <div class="bar-row">
+
+                                <span>2023</span>
+
+                                <div class="bar-background">
+                                    <div
+                                        class="bar"
+                                        style="width: 90%;"
+                                    ></div>
+                                </div>
+
+                                <strong>
+                                    1,240
+                                </strong>
+
+                            </div>
+
+
+                            <div class="bar-row">
+
+                                <span>2024</span>
+
+                                <div class="bar-background">
+                                    <div
+                                        class="bar"
+                                        style="width: 76%;"
+                                    ></div>
+                                </div>
+
+                                <strong>
+                                    1,080
+                                </strong>
+
+                            </div>
+
+
+                            <div class="bar-row">
+
+                                <span>2025</span>
+
+                                <div class="bar-background">
+                                    <div
+                                        class="bar"
+                                        style="width: 64%;"
+                                    ></div>
+                                </div>
+
+                                <strong>
+                                    920
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="data-note">
+
+                        <strong>
+                            Reporting consideration
+                        </strong>
+
+                        <p>
+                            Visualisations can help transform
+                            technical sustainability disclosures
+                            into information that stakeholders
+                            can interpret more easily.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MY APPROACH -->
+
+                <div
+                    class="tab-content"
+                    id="approach"
+                >
+
+                    <span class="content-number">
+                        03
+                    </span>
+
+                    <h3>
+                        How I Apply It
+                    </h3>
+
+                    <p>
+                        My approach combines reporting standards,
+                        data analysis and visual communication.
+                    </p>
+
+
+                    <div class="process">
+
+                        <div class="process-step">
+
+                            <span>01</span>
+
+                            <div>
+                                <h4>
+                                    Understand
+                                </h4>
+
+                                <p>
+                                    Identify the reporting requirements,
+                                    stakeholders and material topics.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-step">
+
+                            <span>02</span>
+
+                            <div>
+                                <h4>
+                                    Analyse
+                                </h4>
+
+                                <p>
+                                    Examine the underlying environmental,
+                                    social and governance information.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="process-step">
+
+                            <span>03</span>
+
+                            <div>
+                                <h4>
+                                    Communicate
+                                </h4>
+
+                                <p>
+                                    Translate complex information into
+                                    clear and engaging disclosures.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MY REPORT -->
+
+                <div
+                    class="tab-content"
+                    id="report"
+                >
+
+                    <span class="content-number">
+                        04
+                    </span>
+
+                    <h3>
+                        My Report
+                    </h3>
+
+                    <p>
+                        Explore the full sustainability report
+                        associated with this framework.
+                    </p>
+
+
+                    <div class="report-preview">
+
+                        <div class="report-icon">
+                            PDF
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Sustainability Report
+                            </h4>
+
+                            <p>
+                                Illustrative sustainability
+                                reporting project.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-buttons">
+
+                        <a
+                            href="reports/GRI_report.pdf"
+                            target="_blank"
+                            class="report-button primary"
+                        >
+                            View Report
+                        </a>
+
+                        <a
+                            href="reports/GRI_report.pdf"
+                            download
+                            class="report-button secondary"
+                        >
+                            ↓ Download PDF
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <p>
+            Rufaro Songore · Sustainability Reporting Portfolio
+        </p>
+
+        <a href="index.html">
+            Return to portfolio →
+        </a>
+
+    </footer>
+
+
+    <!-- Our JavaScript -->
+    <script src="frameworks.js"></script>
+
+</body>
+
+</html>
