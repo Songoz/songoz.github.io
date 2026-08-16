@@ -82,169 +82,296 @@
                 REPORTING ECOSYSTEM
             </p>
 
-            <div class="tree-container">
+           <div class="tree-container">
 
-                <!-- SVG TREE -->
+    <svg class="big-tree"
+         viewBox="0 0 600 800"
+         xmlns="http://www.w3.org/2000/svg">
 
-                <svg
-                    class="tree-svg"
-                    viewBox="0 0 500 650"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
+        <!-- ===================== -->
+        <!-- TREE SHADOW -->
+        <!-- ===================== -->
 
-                    <!-- Tree trunk -->
+        <ellipse
+            class="tree-ground-shadow"
+            cx="300"
+            cy="755"
+            rx="190"
+            ry="28"
+        />
 
-                    <path
-                        class="tree-trunk"
-                        d="M250 600
-                           C245 520 250 450 250 380
-                           C250 330 220 280 180 240
-                           M250 380
-                           C250 320 280 270 330 220
-                           M250 450
-                           C210 400 160 370 120 330
-                           M250 430
-                           C300 380 350 340 390 290"
-                    />
+        <!-- ===================== -->
+        <!-- ROOTS -->
+        <!-- ===================== -->
 
-                    <!-- Branches -->
+        <path
+            class="root"
+            d="M300 650
+               C270 680 235 700 190 720"
+        />
 
-                    <path
-                        class="tree-branch"
-                        d="M180 240
-                           C140 200 120 170 105 130"
-                    />
+        <path
+            class="root"
+            d="M300 650
+               C330 680 370 700 415 720"
+        />
 
-                    <path
-                        class="tree-branch"
-                        d="M330 220
-                           C360 180 390 150 410 110"
-                    />
+        <path
+            class="root"
+            d="M300 660
+               C300 700 295 720 275 745"
+        />
 
-                    <path
-                        class="tree-branch"
-                        d="M120 330
-                           C80 300 65 270 55 230"
-                    />
+        <path
+            class="root"
+            d="M300 660
+               C300 700 310 720 335 745"
+        />
 
-                    <path
-                        class="tree-branch"
-                        d="M390 290
-                           C425 260 440 225 450 185"
-                    />
+        <!-- ===================== -->
+        <!-- MAIN TRUNK -->
+        <!-- ===================== -->
+
+        <path
+            class="tree-trunk"
+            d="
+            M275 680
+            C270 620 275 560 285 500
+            C295 440 290 380 275 330
+
+            C260 280 255 225 270 180
+
+            C285 135 315 135 330 180
+
+            C345 225 340 280 325 330
+
+            C310 380 305 440 315 500
+
+            C325 560 330 620 325 680
+
+            Z
+            "
+        />
+
+        <!-- ===================== -->
+        <!-- MAIN BRANCHES -->
+        <!-- ===================== -->
+
+        <path
+            class="tree-branch"
+            d="M295 360
+               C255 330 210 290 150 245
+               C120 220 95 200 70 180"
+        />
+
+        <path
+            class="tree-branch"
+            d="M305 370
+               C345 330 395 290 455 245
+               C485 220 510 200 535 180"
+        />
+
+        <path
+            class="tree-branch"
+            d="M285 300
+               C250 250 225 210 205 155
+               C190 120 175 95 150 70"
+        />
+
+        <path
+            class="tree-branch"
+            d="M325 300
+               C350 250 375 210 395 155
+               C410 120 425 95 450 70"
+        />
+
+        <path
+            class="tree-branch"
+            d="M300 230
+               C300 180 300 130 300 80"
+        />
+
+        <!-- ===================== -->
+        <!-- SMALL BRANCHES -->
+        <!-- ===================== -->
+
+        <path
+            class="tree-small-branch"
+            d="M190 275
+               C165 250 145 225 130 195"
+        />
+
+        <path
+            class="tree-small-branch"
+            d="M410 275
+               C435 250 455 225 470 195"
+        />
+
+        <path
+            class="tree-small-branch"
+            d="M225 205
+               C205 175 195 145 190 115"
+        />
+
+        <path
+            class="tree-small-branch"
+            d="M375 205
+               C395 175 405 145 410 115"
+        />
+
+        <!-- ===================== -->
+        <!-- LEAVES -->
+        <!-- ===================== -->
+
+        <g class="leaf leaf-gri" data-framework="gri">
+
+            <ellipse
+                cx="70"
+                cy="180"
+                rx="25"
+                ry="14"
+                transform="rotate(-35 70 180)"
+            />
+
+            <ellipse
+                cx="105"
+                cy="215"
+                rx="25"
+                ry="14"
+                transform="rotate(25 105 215)"
+            />
+
+            <ellipse
+                cx="150"
+                cy="245"
+                rx="27"
+                ry="15"
+                transform="rotate(-25 150 245)"
+            />
+
+        </g>
 
 
-                    <!-- GRI LEAF -->
+        <g class="leaf leaf-esrs" data-framework="esrs">
 
-                    <g
-                        class="tree-leaf framework-leaf"
-                        data-framework="gri"
-                        id="leaf-gri"
-                    >
+            <ellipse
+                cx="535"
+                cy="180"
+                rx="25"
+                ry="14"
+                transform="rotate(35 535 180)"
+            />
 
-                        <ellipse
-                            cx="105"
-                            cy="125"
-                            rx="30"
-                            ry="45"
-                            transform="rotate(-35 105 125)"
-                        />
+            <ellipse
+                cx="495"
+                cy="215"
+                rx="25"
+                ry="14"
+                transform="rotate(-25 495 215)"
+            />
 
-                        <text
-                            x="105"
-                            y="132"
-                            text-anchor="middle"
-                        >
-                            GRI
-                        </text>
+            <ellipse
+                cx="455"
+                cy="245"
+                rx="27"
+                ry="15"
+                transform="rotate(25 455 245)"
+            />
 
-                    </g>
-
-
-                    <!-- ESRS LEAF -->
-
-                    <g
-                        class="tree-leaf framework-leaf"
-                        data-framework="esrs"
-                        id="leaf-esrs"
-                    >
-
-                        <ellipse
-                            cx="410"
-                            cy="105"
-                            rx="30"
-                            ry="45"
-                            transform="rotate(35 410 105)"
-                        />
-
-                        <text
-                            x="410"
-                            y="112"
-                            text-anchor="middle"
-                        >
-                            ESRS
-                        </text>
-
-                    </g>
+        </g>
 
 
-                    <!-- ISSB LEAF -->
+        <g class="leaf leaf-issb" data-framework="issb">
 
-                    <g
-                        class="tree-leaf framework-leaf"
-                        data-framework="issb"
-                        id="leaf-issb"
-                    >
+            <ellipse
+                cx="150"
+                cy="70"
+                rx="28"
+                ry="16"
+                transform="rotate(-25 150 70)"
+            />
 
-                        <ellipse
-                            cx="55"
-                            cy="225"
-                            rx="30"
-                            ry="45"
-                            transform="rotate(-55 55 225)"
-                        />
+            <ellipse
+                cx="190"
+                cy="115"
+                rx="27"
+                ry="15"
+                transform="rotate(20 190 115)"
+            />
 
-                        <text
-                            x="55"
-                            y="232"
-                            text-anchor="middle"
-                        >
-                            ISSB
-                        </text>
+            <ellipse
+                cx="205"
+                cy="155"
+                rx="25"
+                ry="14"
+                transform="rotate(-20 205 155)"
+            />
 
-                    </g>
-
-
-                    <!-- EU TAXONOMY LEAF -->
-
-                    <g
-                        class="tree-leaf framework-leaf"
-                        data-framework="taxonomy"
-                        id="leaf-taxonomy"
-                    >
-
-                        <ellipse
-                            cx="450"
-                            cy="180"
-                            rx="35"
-                            ry="50"
-                            transform="rotate(55 450 180)"
-                        />
-
-                        <text
-                            x="450"
-                            y="187"
-                            text-anchor="middle"
-                        >
-                            EU
-                        </text>
-
-                    </g>
+        </g>
 
 
-                </svg>
+        <g class="leaf leaf-taxonomy" data-framework="taxonomy">
 
-            </div>
+            <ellipse
+                cx="450"
+                cy="70"
+                rx="28"
+                ry="16"
+                transform="rotate(25 450 70)"
+            />
+
+            <ellipse
+                cx="410"
+                cy="115"
+                rx="27"
+                ry="15"
+                transform="rotate(-20 410 115)"
+            />
+
+            <ellipse
+                cx="395"
+                cy="155"
+                rx="25"
+                ry="14"
+                transform="rotate(20 395 155)"
+            />
+
+        </g>
+
+
+        <!-- ===================== -->
+        <!-- TOP LEAVES -->
+        <!-- ===================== -->
+
+        <ellipse
+            class="leaf leaf-top"
+            cx="300"
+            cy="55"
+            rx="32"
+            ry="18"
+        />
+
+        <ellipse
+            class="leaf leaf-top-small"
+            cx="265"
+            cy="85"
+            rx="24"
+            ry="14"
+            transform="rotate(-30 265 85)"
+        />
+
+        <ellipse
+            class="leaf leaf-top-small"
+            cx="335"
+            cy="85"
+            rx="24"
+            ry="14"
+            transform="rotate(30 335 85)"
+        />
+
+    </svg>
+
+</div>
 
 
             <p class="tree-instruction">
