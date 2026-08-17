@@ -348,7 +348,43 @@ body {
     filter:
         drop-shadow(0 10px 15px rgba(74, 93, 35, 0.35));
 }
+/* =========================================
+   FRAMEWORK LEAF — FALLING STATE
+   ========================================= */
 
+.framework-leaf.falling {
+    animation: leafFall 2.8s ease-in forwards;
+    pointer-events: none;
+}
+
+@keyframes leafFall {
+
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(8px, 35px) rotate(8deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-5px, 90px) rotate(-5deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translate(15px, 150px) rotate(12deg);
+        opacity: 0.95;
+    }
+
+    100% {
+        transform: translate(0, 220px) rotate(25deg);
+        opacity: 0;
+    }
+
+}
 
 /* =========================================
    FRAMEWORK LEAF TEXT
