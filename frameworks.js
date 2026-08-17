@@ -226,11 +226,9 @@ function selectFramework(framework, leaf) {
 
         conceptThree.textContent =
             data.conceptThree;
+openTab("overview");
 
-
-        /* Open the overview */
-
-        openTab("overview");
+}, 2800);
 
 
         /*
