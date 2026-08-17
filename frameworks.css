@@ -176,16 +176,14 @@ body {
     letter-spacing: 3px;
     margin-bottom: 20px;
 }
-
-
 /* =========================================
-   BIG INTERACTIVE TREE
+   TREE — ORGANIC ILLUSTRATION
    ========================================= */
 
 .tree-container {
     width: 100%;
-    max-width: 620px;
-    height: 800px;
+    max-width: 650px;
+    height: 820px;
 
     display: flex;
     justify-content: center;
@@ -195,16 +193,25 @@ body {
     overflow: visible;
 }
 
+
+/* =========================================
+   SVG TREE
+   ========================================= */
+
 .big-tree {
-    width: min(620px, 100%);
-    height: 800px;
+    width: 100%;
+    max-width: 650px;
+    height: 820px;
 
     overflow: visible;
 
     filter:
-        drop-shadow(0 20px 25px rgba(74, 93, 35, 0.12));
+        drop-shadow(0 18px 25px rgba(74, 93, 35, 0.12));
 
-    animation: treeBreathing 7s ease-in-out infinite;
+    /*
+       We are NOT moving the entire tree anymore.
+       The movement will happen subtly on the leaves.
+    */
 }
 
 
@@ -222,19 +229,12 @@ body {
    ========================================= */
 
 .tree-trunk {
-    fill: #5c4322;
-
-    stroke: #5c4322;
+    fill: #5C4322;
+    stroke: #49351C;
     stroke-width: 3;
 
     stroke-linecap: round;
     stroke-linejoin: round;
-
-    transform-origin: center bottom;
-
-    transition:
-        transform 0.8s ease,
-        filter 0.8s ease;
 }
 
 
@@ -245,7 +245,7 @@ body {
 .tree-branch {
     fill: none;
 
-    stroke: #5c4322;
+    stroke: #5C4322;
     stroke-width: 22;
 
     stroke-linecap: round;
@@ -262,10 +262,11 @@ body {
 .tree-small-branch {
     fill: none;
 
-    stroke: #5c4322;
-    stroke-width: 13;
+    stroke: #6B4C27;
+    stroke-width: 11;
 
     stroke-linecap: round;
+    stroke-linejoin: round;
 
     opacity: 0.95;
 }
@@ -278,194 +279,83 @@ body {
 .root {
     fill: none;
 
-    stroke: #5c4322;
-    stroke-width: 17;
+    stroke: #5C4322;
+    stroke-width: 12;
 
     stroke-linecap: round;
+    stroke-linejoin: round;
 
     opacity: 0.95;
 }
 
 
 /* =========================================
-   LEAVES
+   ORGANIC LEAF SHAPE
    ========================================= */
 
 .leaf {
-    cursor: pointer;
-
-    fill: #6F8535;
+    cursor: default;
 
     stroke: #4A5D23;
-    stroke-width: 2;
+    stroke-width: 1.5;
 
     transform-box: fill-box;
     transform-origin: center;
 
     transition:
-        transform 0.4s ease,
-        opacity 0.4s ease,
-        fill 0.4s ease;
-}
-
-/* Different shades make the tree feel organic */
-
-.leaf-gri ellipse:nth-child(1) {
-    fill: #738B3A;
-}
-
-.leaf-gri ellipse:nth-child(2) {
-    fill: #829A47;
-}
-
-.leaf-gri ellipse:nth-child(3) {
-    fill: #647C30;
-}
-
-
-.leaf-esrs ellipse:nth-child(1) {
-    fill: #829A47;
-}
-
-.leaf-esrs ellipse:nth-child(2) {
-    fill: #718A39;
-}
-
-.leaf-esrs ellipse:nth-child(3) {
-    fill: #5E752C;
-}
-
-
-.leaf-issb ellipse:nth-child(1) {
-    fill: #91A855;
-}
-
-.leaf-issb ellipse:nth-child(2) {
-    fill: #78933D;
-}
-
-.leaf-issb ellipse:nth-child(3) {
-    fill: #667F31;
-}
-
-
-.leaf-taxonomy ellipse:nth-child(1) {
-    fill: #7F9744;
-}
-
-.leaf-taxonomy ellipse:nth-child(2) {
-    fill: #6B8435;
-}
-
-.leaf-taxonomy ellipse:nth-child(3) {
-    fill: #597329;
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
 
 /* =========================================
-   TOP LEAVES
+   ORDINARY NON-CLICKABLE LEAVES
    ========================================= */
 
-.leaf-top {
-    fill: #819B46;
-    stroke: #4A5D23;
-    stroke-width: 2;
-}
+.background-leaf {
+    cursor: default;
+    pointer-events: none;
 
-.leaf-top-small {
-    fill: #718A38;
-    stroke: #4A5D23;
-    stroke-width: 2;
+    opacity: 0.9;
 }
 
 
 /* =========================================
-   SUBTLE TREE MOVEMENT
+   FRAMEWORK LEAVES
    ========================================= */
 
-.tree-svg {
-    width: 100%;
-
-    height: auto;
-
-    overflow: visible;
-}
-
-
-/* Tree trunk */
-
-/* =========================================
-   TREE TRUNK
-   ========================================= */
-
-.tree-trunk {
-    fill: #4A5D23;
-
-    stroke: #344419;
-    stroke-width: 3;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    transform-origin: center bottom;
-
-    transition:
-        transform 0.8s ease,
-        filter 0.8s ease;
-}
-
-.tree-branch {
-    stroke-width: 13;
-}
-
-
-
-/* =========================================
-   LEAVES
-   ========================================= */
-
-.leaf {
+.framework-leaf {
     cursor: pointer;
-
-    fill: #6F8535;
-
-    stroke: #4A5D23;
-    stroke-width: 2;
 
     transform-box: fill-box;
     transform-origin: center;
 
     transition:
-        transform 0.4s ease,
-        opacity 0.4s ease,
-        fill 0.4s ease;
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
-/* =========================================
-   LEAF HOVER
-   ========================================= */
-
-.leaf:hover {
-    transform: scale(1.12) rotate(4deg);
+.framework-leaf:hover {
+    transform: scale(1.12) rotate(3deg);
 
     filter:
-        drop-shadow(0 5px 8px rgba(74, 93, 35, 0.25));
+        drop-shadow(0 7px 10px rgba(74, 93, 35, 0.28));
+}
+
+.framework-leaf.active-leaf {
+    transform: scale(1.16);
+
+    filter:
+        drop-shadow(0 10px 15px rgba(74, 93, 35, 0.35));
 }
 
 
 /* =========================================
-   ACTIVE LEAF
+   FRAMEWORK LEAF TEXT
    ========================================= */
 
-.leaf.active-leaf {
-    transform: scale(1.18);
-
-    filter:
-        drop-shadow(0 8px 12px rgba(74, 93, 35, 0.30));
-}
-
-.tree-leaf text {
-    fill: white;
+.framework-leaf text {
+    fill: #FDFBF7;
 
     font-family: 'Inter', sans-serif;
 
@@ -473,43 +363,86 @@ body {
 
     font-weight: 700;
 
+    letter-spacing: 0.5px;
+
     pointer-events: none;
 }
 
 
-/* This class will be added by JavaScript */
+/* =========================================
+   LEAF COLOURS
+   ========================================= */
 
-.tree-leaf.falling {
-    animation: leafFall 0.8s ease-in forwards;
+.leaf-gri {
+    fill: #78913D;
+}
+
+.leaf-esrs {
+    fill: #667F32;
+}
+
+.leaf-issb {
+    fill: #8DA653;
+}
+
+.leaf-taxonomy {
+    fill: #71863A;
 }
 
 
-/* Leaf falling animation */
+/* =========================================
+   ORGANIC CANOPY LEAVES
+   ========================================= */
 
-@keyframes leafFall {
+.leaf-light {
+    fill: #91A855;
+}
+
+.leaf-medium {
+    fill: #78913D;
+}
+
+.leaf-dark {
+    fill: #5F7630;
+}
+
+.leaf-soft {
+    fill: #829A47;
+}
+
+
+/* =========================================
+   SUBTLE LEAF MOVEMENT
+   ========================================= */
+
+.background-leaf:nth-of-type(3n) {
+    animation: leafSway 6s ease-in-out infinite;
+}
+
+.background-leaf:nth-of-type(4n) {
+    animation: leafSway 7.5s ease-in-out infinite reverse;
+}
+
+.background-leaf:nth-of-type(5n) {
+    animation: leafSway 8.5s ease-in-out infinite;
+}
+
+
+@keyframes leafSway {
 
     0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
+        transform: rotate(0deg);
     }
 
-    40% {
-        transform: translate(20px, 100px) rotate(25deg);
-        opacity: 1;
-    }
-
-    75% {
-        transform: translate(-10px, 220px) rotate(-20deg);
-        opacity: 1;
+    50% {
+        transform: rotate(2deg);
     }
 
     100% {
-        transform: translate(30px, 330px) rotate(40deg);
-        opacity: 0;
+        transform: rotate(0deg);
     }
 
 }
-
 
 /* =========================================
    TREE INSTRUCTION
