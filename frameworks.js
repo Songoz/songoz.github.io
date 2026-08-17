@@ -95,11 +95,16 @@ const frameworkData = {
 
 
 /* =========================================
-   FIND ELEMENTS ON THE PAGE
+   FIND FRAMEWORK LEAVES
    ========================================= */
 
 const leaves =
-    document.querySelectorAll(".framework-leaf");
+    document.querySelectorAll(".leaf[data-framework]");
+
+
+/* =========================================
+   DASHBOARD ELEMENTS
+   ========================================= */
 
 const title =
     document.querySelector("#framework-title");
@@ -127,14 +132,14 @@ const tabContents =
 
 
 /* =========================================
-   KEEP TRACK OF CURRENT FRAMEWORK
+   CURRENT FRAMEWORK
    ========================================= */
 
 let currentFramework = null;
 
 
 /* =========================================
-   WHEN SOMEONE CLICKS A LEAF
+   FRAMEWORK LEAF CLICK
    ========================================= */
 
 leaves.forEach(function(leaf) {
@@ -160,46 +165,47 @@ function selectFramework(framework, leaf) {
     const data =
         frameworkData[framework];
 
-
-    /* -------------------------------------
-       If the same framework is clicked again,
-       don't restart everything.
-       ------------------------------------- */
-
-    if (currentFramework === framework) {
+    if (!data) {
         return;
     }
 
 
-    /* -------------------------------------
-       Bring previously selected leaf back
-       ------------------------------------- */
+    /* Prevent clicking while a leaf is falling */
 
-    leaves.forEach(function(item) {
+    if (leaf.classList.contains("falling")) {
+        return;
+    }
 
-        item.classList.remove("falling");
-
-    });
-
-
-    /* -------------------------------------
-       Make the selected leaf fall
-       ------------------------------------- */
-
-    leaf.classList.add("falling");
-
-
-    /* -------------------------------------
-       Remember which framework is active
-       ------------------------------------- */
 
     currentFramework = framework;
 
 
-    /* -------------------------------------
-       Wait for the leaf animation to finish
-       before changing the dashboard.
-       ------------------------------------- */
+    /* Remove previous active state */
+
+    leaves.forEach(function(item) {
+
+        item.classList.remove("active-leaf");
+
+    });
+
+
+    /* Highlight clicked leaf */
+
+    leaf.classList.add("active-leaf");
+
+
+    /*
+       Start the falling animation.
+       The dashboard will update only after
+       the leaf reaches the roots.
+    */
+
+    leaf.classList.add("falling");
+
+
+    /*
+       Wait for the falling animation to finish.
+    */
 
     setTimeout(function() {
 
@@ -222,17 +228,37 @@ function selectFramework(framework, leaf) {
             data.conceptThree;
 
 
-        /* Open Overview tab */
+        /* Open the overview */
 
         openTab("overview");
 
-    }, 800);
+
+        /*
+           Create the splash effect.
+        */
+
+        createRootSplash();
+
+
+        /*
+           Reset the leaf so it can be clicked again.
+        */
+
+        setTimeout(function() {
+
+            leaf.classList.remove("falling");
+            leaf.classList.remove("active-leaf");
+
+        }, 700);
+
+
+    }, 1600);
 
 }
 
 
 /* =========================================
-   DASHBOARD TAB SYSTEM
+   DASHBOARD TABS
    ========================================= */
 
 tabs.forEach(function(button) {
@@ -249,9 +275,11 @@ tabs.forEach(function(button) {
 });
 
 
-function openTab(tabName) {
+/* =========================================
+   OPEN TAB
+   ========================================= */
 
-    /* Remove active state from buttons */
+function openTab(tabName) {
 
     tabs.forEach(function(button) {
 
@@ -260,8 +288,6 @@ function openTab(tabName) {
     });
 
 
-    /* Remove active state from content */
-
     tabContents.forEach(function(content) {
 
         content.classList.remove("active");
@@ -269,12 +295,11 @@ function openTab(tabName) {
     });
 
 
-    /* Activate selected button */
-
     const selectedButton =
         document.querySelector(
             `[data-tab="${tabName}"]`
         );
+
 
     if (selectedButton) {
 
@@ -283,15 +308,84 @@ function openTab(tabName) {
     }
 
 
-    /* Activate selected content */
-
     const selectedContent =
         document.getElementById(tabName);
+
 
     if (selectedContent) {
 
         selectedContent.classList.add("active");
 
     }
+
+}
+
+
+/* =========================================
+   ROOT SPLASH
+   ========================================= */
+
+function createRootSplash() {
+
+    const tree =
+        document.querySelector(".big-tree");
+
+    if (!tree) {
+        return;
+    }
+
+
+    const splash =
+        document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "g"
+        );
+
+    splash.classList.add("root-splash");
+
+
+    /*
+       Small droplets.
+    */
+
+    for (let i = 0; i < 8; i++) {
+
+        const drop =
+            document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "circle"
+            );
+
+        drop.setAttribute("cx", 300);
+        drop.setAttribute("cy", 710);
+
+        drop.setAttribute(
+            "r",
+            Math.random() * 3 + 2
+        );
+
+        drop.style.setProperty(
+            "--x",
+            `${(Math.random() - 0.5) * 100}px`
+        );
+
+        drop.style.setProperty(
+            "--y",
+            `${-(Math.random() * 45 + 15)}px`
+        );
+
+        splash.appendChild(drop);
+
+    }
+
+
+    tree.appendChild(splash);
+
+
+    setTimeout(function() {
+
+        splash.remove();
+
+    }, 900);
 
 }
