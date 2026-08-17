@@ -5,7 +5,6 @@
 const frameworkData = {
 
     gri: {
-
         title: "Global Reporting Initiative",
 
         description:
@@ -22,16 +21,13 @@ const frameworkData = {
 
         conceptThree:
             "Stakeholder-focused disclosure"
-
     },
 
-
     esrs: {
-
         title: "European Sustainability Reporting Standards",
 
         description:
-            "The ESRS provide the reporting requirements used under the European Union's Corporate Sustainability Reporting framework.",
+            "The ESRS provide the reporting requirements used under the European Union's sustainability reporting framework.",
 
         overview:
             "ESRS reporting connects sustainability impacts, risks and opportunities through the principle of double materiality.",
@@ -44,12 +40,9 @@ const frameworkData = {
 
         conceptThree:
             "Structured disclosures"
-
     },
 
-
     issb: {
-
         title: "IFRS S1 & S2 — ISSB",
 
         description:
@@ -66,12 +59,9 @@ const frameworkData = {
 
         conceptThree:
             "Metrics & targets"
-
     },
 
-
     taxonomy: {
-
         title: "EU Taxonomy",
 
         description:
@@ -88,7 +78,6 @@ const frameworkData = {
 
         conceptThree:
             "Environmental objectives"
-
     }
 
 };
@@ -98,16 +87,16 @@ const frameworkData = {
    FIND FRAMEWORK LEAVES
    ========================================= */
 
-const leaves =
-    document.querySelectorAll(".leaf[data-framework]");
+const leaves = document.querySelectorAll(
+    ".framework-leaf[data-framework]"
+);
 
 
 /* =========================================
    DASHBOARD ELEMENTS
    ========================================= */
 
-const title =
-    document.querySelector("#framework-title");
+const title = document.querySelector("#framework-title");
 
 const description =
     document.querySelector("#framework-description");
@@ -132,6 +121,14 @@ const tabContents =
 
 
 /* =========================================
+   ROOT SPLASH
+   ========================================= */
+
+const rootSplash =
+    document.querySelector("#root-splash");
+
+
+/* =========================================
    CURRENT FRAMEWORK
    ========================================= */
 
@@ -142,9 +139,9 @@ let currentFramework = null;
    FRAMEWORK LEAF CLICK
    ========================================= */
 
-leaves.forEach(function(leaf) {
+leaves.forEach(function (leaf) {
 
-    leaf.addEventListener("click", function() {
+    leaf.addEventListener("click", function () {
 
         const framework =
             leaf.dataset.framework;
@@ -159,14 +156,19 @@ leaves.forEach(function(leaf) {
 /* =========================================
    SELECT FRAMEWORK
    ========================================= */
+
 function selectFramework(framework, leaf) {
 
     const data =
         frameworkData[framework];
 
+    if (!data) {
+        return;
+    }
+
 
     /* -------------------------------------
-       Prevent clicking the same leaf again
+       Prevent repeated click
        ------------------------------------- */
 
     if (currentFramework === framework) {
@@ -175,10 +177,10 @@ function selectFramework(framework, leaf) {
 
 
     /* -------------------------------------
-       Remove previous states
+       Reset other leaves
        ------------------------------------- */
 
-    leaves.forEach(function(item) {
+    leaves.forEach(function (item) {
 
         item.classList.remove("falling");
         item.classList.remove("active-leaf");
@@ -186,11 +188,25 @@ function selectFramework(framework, leaf) {
     });
 
 
-    rootSplash.classList.remove("active");
+    /* -------------------------------------
+       Reset splash
+       ------------------------------------- */
+
+    if (rootSplash) {
+
+        rootSplash.classList.remove("active");
+
+        /*
+           Force browser reflow so the
+           animation can play again.
+        */
+
+        void rootSplash.offsetWidth;
+    }
 
 
     /* -------------------------------------
-       Remember framework
+       Store current framework
        ------------------------------------- */
 
     currentFramework = framework;
@@ -204,23 +220,30 @@ function selectFramework(framework, leaf) {
 
 
     /* -------------------------------------
-       Wait until leaf reaches the roots
+       Wait for leaf to reach the roots
        ------------------------------------- */
 
-    setTimeout(function() {
-
-        /* Trigger splash */
-
-        rootSplash.classList.remove("active");
-
-        void rootSplash.offsetWidth;
-
-        rootSplash.classList.add("active");
+    setTimeout(function () {
 
 
-        /* ---------------------------------
-           Update framework information
-           --------------------------------- */
+        /* ================================
+           TRIGGER SPLASH
+           ================================ */
+
+        if (rootSplash) {
+
+            rootSplash.classList.remove("active");
+
+            void rootSplash.offsetWidth;
+
+            rootSplash.classList.add("active");
+
+        }
+
+
+        /* ================================
+           UPDATE DASHBOARD
+           ================================ */
 
         title.textContent =
             data.title;
@@ -241,7 +264,9 @@ function selectFramework(framework, leaf) {
             data.conceptThree;
 
 
-        /* Open Overview */
+        /* ================================
+           OPEN OVERVIEW TAB
+           ================================ */
 
         openTab("overview");
 
@@ -251,37 +276,13 @@ function selectFramework(framework, leaf) {
 }
 
 
-        /*
-           Create the splash effect.
-        */
-
-        createRootSplash();
-
-
-        /*
-           Reset the leaf so it can be clicked again.
-        */
-
-        setTimeout(function() {
-
-            leaf.classList.remove("falling");
-            leaf.classList.remove("active-leaf");
-
-        }, 700);
-
-
-    }, 1600);
-
-}
-
-
 /* =========================================
    DASHBOARD TABS
    ========================================= */
 
-tabs.forEach(function(button) {
+tabs.forEach(function (button) {
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
 
         const tabName =
             button.dataset.tab;
@@ -299,14 +300,14 @@ tabs.forEach(function(button) {
 
 function openTab(tabName) {
 
-    tabs.forEach(function(button) {
+    tabs.forEach(function (button) {
 
         button.classList.remove("active");
 
     });
 
 
-    tabContents.forEach(function(content) {
+    tabContents.forEach(function (content) {
 
         content.classList.remove("active");
 
@@ -335,75 +336,5 @@ function openTab(tabName) {
         selectedContent.classList.add("active");
 
     }
-
-}
-
-
-/* =========================================
-   ROOT SPLASH
-   ========================================= */
-
-function createRootSplash() {
-
-    const tree =
-        document.querySelector(".big-tree");
-
-    if (!tree) {
-        return;
-    }
-
-
-    const splash =
-        document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "g"
-        );
-
-    splash.classList.add("root-splash");
-
-
-    /*
-       Small droplets.
-    */
-
-    for (let i = 0; i < 8; i++) {
-
-        const drop =
-            document.createElementNS(
-                "http://www.w3.org/2000/svg",
-                "circle"
-            );
-
-        drop.setAttribute("cx", 300);
-        drop.setAttribute("cy", 710);
-
-        drop.setAttribute(
-            "r",
-            Math.random() * 3 + 2
-        );
-
-        drop.style.setProperty(
-            "--x",
-            `${(Math.random() - 0.5) * 100}px`
-        );
-
-        drop.style.setProperty(
-            "--y",
-            `${-(Math.random() * 45 + 15)}px`
-        );
-
-        splash.appendChild(drop);
-
-    }
-
-
-    tree.appendChild(splash);
-
-
-    setTimeout(function() {
-
-        splash.remove();
-
-    }, 900);
 
 }
