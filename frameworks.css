@@ -379,34 +379,6 @@ body {
 
 
 /* =========================================
-   FRAMEWORK LEAVES
-   ========================================= */
-
-.framework-leaf {
-    cursor: pointer;
-
-    transform-box: fill-box;
-    transform-origin: center;
-
-    transition:
-        transform 0.35s ease,
-        filter 0.35s ease;
-}
-
-.framework-leaf:hover {
-    transform: scale(1.12) rotate(3deg);
-
-    filter:
-        drop-shadow(0 7px 10px rgba(74, 93, 35, 0.28));
-}
-
-.framework-leaf.active-leaf {
-    transform: scale(1.16);
-
-    filter:
-        drop-shadow(0 10px 15px rgba(74, 93, 35, 0.35));
-}
-/* =========================================
    FRAMEWORK LEAF — FALLING STATE
    ========================================= */
 
@@ -415,6 +387,36 @@ body {
     pointer-events: none;
 }
 
+
+/* -----------------------------------------
+   INDIVIDUAL LANDING DISTANCES
+   ----------------------------------------- */
+
+.framework-leaf[data-framework="gri"] {
+    --fall-x: 208px;
+    --fall-y: 528px;
+}
+
+.framework-leaf[data-framework="esrs"] {
+    --fall-x: -208px;
+    --fall-y: 528px;
+}
+
+.framework-leaf[data-framework="issb"] {
+    --fall-x: 98px;
+    --fall-y: 632px;
+}
+
+.framework-leaf[data-framework="taxonomy"] {
+    --fall-x: -98px;
+    --fall-y: 632px;
+}
+
+
+/* =========================================
+   FALL ANIMATION
+   ========================================= */
+
 @keyframes leafFall {
 
     0% {
@@ -422,23 +424,58 @@ body {
         opacity: 1;
     }
 
-    25% {
-        transform: translate(8px, 35px) rotate(8deg);
+    20% {
+        transform:
+            translate(
+                calc(var(--fall-x) * 0.15),
+                calc(var(--fall-y) * 0.20)
+            )
+            rotate(8deg);
+
         opacity: 1;
     }
 
-    50% {
-        transform: translate(-5px, 90px) rotate(-5deg);
+    45% {
+        transform:
+            translate(
+                calc(var(--fall-x) * -0.05),
+                calc(var(--fall-y) * 0.45)
+            )
+            rotate(-8deg);
+
         opacity: 1;
     }
 
-    75% {
-        transform: translate(15px, 150px) rotate(12deg);
+    70% {
+        transform:
+            translate(
+                calc(var(--fall-x) * 0.12),
+                calc(var(--fall-y) * 0.72)
+            )
+            rotate(12deg);
+
         opacity: 0.95;
     }
 
+    90% {
+        transform:
+            translate(
+                calc(var(--fall-x) * 0.02),
+                calc(var(--fall-y) * 0.92)
+            )
+            rotate(18deg);
+
+        opacity: 0.85;
+    }
+
     100% {
-        transform: translate(0, 220px) rotate(25deg);
+        transform:
+            translate(
+                var(--fall-x),
+                var(--fall-y)
+            )
+            rotate(25deg);
+
         opacity: 0;
     }
 
