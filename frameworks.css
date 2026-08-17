@@ -287,7 +287,65 @@ body {
 
     opacity: 0.95;
 }
+/* =========================================
+   ROOT SPLASH
+   ========================================= */
 
+.root-splash {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.root-splash.active {
+    animation: splashAppear 0.8s ease-out forwards;
+}
+
+.splash-ring {
+    fill: none;
+    stroke: #6F8535;
+    stroke-width: 3;
+    opacity: 0;
+}
+
+.root-splash.active .splash-ring-1 {
+    animation: splashRing 0.8s ease-out;
+}
+
+.root-splash.active .splash-ring-2 {
+    animation: splashRing 0.8s ease-out 0.08s;
+}
+
+.root-splash.active .splash-ring-3 {
+    animation: splashRing 0.8s ease-out 0.16s;
+}
+
+@keyframes splashRing {
+
+    0% {
+        opacity: 0.8;
+        transform: scale(0.3);
+        transform-origin: 300px 700px;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(3);
+        transform-origin: 300px 700px;
+    }
+
+}
+
+@keyframes splashAppear {
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
 
 /* =========================================
    ORGANIC LEAF SHAPE
