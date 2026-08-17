@@ -159,55 +159,68 @@ leaves.forEach(function(leaf) {
 /* =========================================
    SELECT FRAMEWORK
    ========================================= */
-
 function selectFramework(framework, leaf) {
 
     const data =
         frameworkData[framework];
 
-    if (!data) {
+
+    /* -------------------------------------
+       Prevent clicking the same leaf again
+       ------------------------------------- */
+
+    if (currentFramework === framework) {
         return;
     }
 
 
-    /* Prevent clicking while a leaf is falling */
-
-    if (leaf.classList.contains("falling")) {
-        return;
-    }
-
-
-    currentFramework = framework;
-
-
-    /* Remove previous active state */
+    /* -------------------------------------
+       Remove previous states
+       ------------------------------------- */
 
     leaves.forEach(function(item) {
 
+        item.classList.remove("falling");
         item.classList.remove("active-leaf");
 
     });
 
 
-    /* Highlight clicked leaf */
-
-    leaf.classList.add("active-leaf");
+    rootSplash.classList.remove("active");
 
 
-    /*
-       Start the falling animation.
-       The dashboard will update only after
-       the leaf reaches the roots.
-    */
+    /* -------------------------------------
+       Remember framework
+       ------------------------------------- */
+
+    currentFramework = framework;
+
+
+    /* -------------------------------------
+       Make selected leaf fall
+       ------------------------------------- */
 
     leaf.classList.add("falling");
 
 
-    /*
-       Wait for the falling animation to finish.
-    */
+    /* -------------------------------------
+       Wait until leaf reaches the roots
+       ------------------------------------- */
 
     setTimeout(function() {
+
+        /* Trigger splash */
+
+        rootSplash.classList.remove("active");
+
+        void rootSplash.offsetWidth;
+
+        rootSplash.classList.add("active");
+
+
+        /* ---------------------------------
+           Update framework information
+           --------------------------------- */
 
         title.textContent =
             data.title;
@@ -226,9 +239,16 @@ function selectFramework(framework, leaf) {
 
         conceptThree.textContent =
             data.conceptThree;
-openTab("overview");
 
-}, 2800);
+
+        /* Open Overview */
+
+        openTab("overview");
+
+
+    }, 2800);
+
+}
 
 
         /*
