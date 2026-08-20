@@ -181,15 +181,22 @@ body {
    ========================================= */
 
 .tree-container {
-    width: 100%;
-    max-width: 650px;
-    height: 820px;
+    width: calc(100% + 160px);
+
+    max-width: 800px;
+
+    height: 850px;
+
+    margin-left: -120px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     position: relative;
+
     overflow: visible;
 }
 
@@ -200,8 +207,8 @@ body {
 
 .big-tree {
     width: 100%;
-    max-width: 650px;
-    height: 820px;
+    max-width: 800px;
+    height: 850px;
 
     overflow: visible;
 
@@ -222,7 +229,17 @@ body {
 .tree-ground-shadow {
     fill: rgba(74, 93, 35, 0.12);
 }
+.tree-ground {
+    fill: none;
 
+    stroke: #7A6639;
+
+    stroke-width: 8;
+
+    stroke-linecap: round;
+
+    opacity: 0.75;
+}
 
 /* =========================================
    TRUNK
@@ -236,7 +253,45 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+.tree-branch-primary {
+    fill: #704C28;
 
+    stroke: #5B3E20;
+
+    stroke-width: 2;
+
+    stroke-linejoin: round;
+}
+
+.tree-branch-secondary {
+    fill: #7A532C;
+
+    stroke: #634321;
+
+    stroke-width: 1.5;
+
+    stroke-linejoin: round;
+}
+
+.tree-branch-tertiary {
+    fill: #87603A;
+
+    stroke: #6A4828;
+
+    stroke-width: 1.2;
+
+    stroke-linejoin: round;
+}
+
+.root-mass {
+    fill: #684625;
+
+    stroke: #54391F;
+
+    stroke-width: 2;
+
+    stroke-linejoin: round;
+}
 
 /* =========================================
    MAIN BRANCHES
@@ -288,63 +343,147 @@ body {
     opacity: 0.95;
 }
 /* =========================================
-   ROOT SPLASH
+   ROOT SPLASH — LEAF / GREEN PARTICLE BURST
    ========================================= */
 
 .root-splash {
     opacity: 0;
+
     pointer-events: none;
 }
 
 .root-splash.active {
-    animation: splashAppear 0.8s ease-out forwards;
+    opacity: 1;
 }
 
-.splash-ring {
-    fill: none;
-    stroke: #6F8535;
-    stroke-width: 3;
+
+/* =========================================
+   SPLASH PARTICLES
+   ========================================= */
+
+.splash-particle {
+    fill: #7C9D38;
+
     opacity: 0;
 }
 
-.root-splash.active .splash-ring-1 {
-    animation: splashRing 0.8s ease-out;
+
+/* =========================================
+   INDIVIDUAL PARTICLES
+   ========================================= */
+
+.root-splash.active .p1 {
+    animation: particleOne 0.65s ease-out forwards;
 }
 
-.root-splash.active .splash-ring-2 {
-    animation: splashRing 0.8s ease-out 0.08s;
+.root-splash.active .p2 {
+    animation: particleTwo 0.65s ease-out forwards;
 }
 
-.root-splash.active .splash-ring-3 {
-    animation: splashRing 0.8s ease-out 0.16s;
+.root-splash.active .p3 {
+    animation: particleThree 0.65s ease-out forwards;
 }
 
-@keyframes splashRing {
+.root-splash.active .p4 {
+    animation: particleFour 0.65s ease-out forwards;
+}
+
+.root-splash.active .p5 {
+    animation: particleFive 0.65s ease-out forwards;
+}
+
+
+/* =========================================
+   PARTICLE ANIMATIONS
+   ========================================= */
+
+@keyframes particleOne {
 
     0% {
-        opacity: 0.8;
-        transform: scale(0.3);
-        transform-origin: 300px 700px;
-    }
-
-    100% {
+        transform: translate(0, 0) scale(0.3);
         opacity: 0;
-        transform: scale(3);
-        transform-origin: 300px 700px;
     }
 
-}
-
-@keyframes splashAppear {
-
-    0% {
+    20% {
         opacity: 1;
     }
 
     100% {
+        transform: translate(-28px, -35px) scale(1);
+        opacity: 0;
+    }
+}
+
+
+@keyframes particleTwo {
+
+    0% {
+        transform: translate(0, 0) scale(0.3);
+        opacity: 0;
+    }
+
+    20% {
         opacity: 1;
     }
 
+    100% {
+        transform: translate(-10px, -48px) scale(1);
+        opacity: 0;
+    }
+}
+
+
+@keyframes particleThree {
+
+    0% {
+        transform: translate(0, 0) scale(0.3);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(18px, -40px) scale(1);
+        opacity: 0;
+    }
+}
+
+
+@keyframes particleFour {
+
+    0% {
+        transform: translate(0, 0) scale(0.3);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(38px, -25px) scale(1);
+        opacity: 0;
+    }
+}
+
+
+@keyframes particleFive {
+
+    0% {
+        transform: translate(0, 0) scale(0.3);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-42px, -18px) scale(1);
+        opacity: 0;
+    }
 }
 
 /* =========================================
@@ -364,7 +503,17 @@ body {
         transform 0.35s ease,
         filter 0.35s ease;
 }
+.leaf-vein {
+    fill: none;
 
+    stroke: rgba(255,255,255,0.45);
+
+    stroke-width: 1.2;
+
+    stroke-linecap: round;
+
+    pointer-events: none;
+}
 
 /* =========================================
    ORDINARY NON-CLICKABLE LEAVES
