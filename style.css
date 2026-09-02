@@ -1174,3 +1174,500 @@ background:white;
 color:#4A5D23;
 
 }
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .content {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        padding: 0 24px;
+    }
+
+
+    /* ---------- NAVIGATION ---------- */
+
+    nav {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    nav h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* ---------- SECTION NUMBERS ---------- */
+
+    .section-number {
+        font-size: 90px;
+        top: 0;
+        left: 10px;
+        opacity: .25;
+    }
+
+    #about .section-number,
+    #frameworks .section-number,
+    #contact .section-number {
+        left: 5px;
+        top: 0;
+    }
+
+    #portfolio .section-number,
+    #how-i-work .section-number {
+        left: auto;
+        right: 10px;
+        top: 0;
+    }
+
+
+    /* ---------- HEADINGS ---------- */
+
+    .section h2 {
+        font-size: 42px;
+        margin-top: 35px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    .section-intro {
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 70px 24px 90px;
+        text-align: center;
+    }
+
+    .image-container {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .sage-blob {
+        width: 280px;
+        height: 280px;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero img {
+        width: min(280px, 80vw);
+        height: min(350px, 100vw);
+        border-width: 12px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 600px;
+        align-items: center;
+    }
+
+    .hero-tag {
+        font-size: 11px;
+        letter-spacing: 2px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 12vw, 56px);
+        line-height: 1.08;
+        margin-bottom: 20px;
+    }
+
+    .hero-statement {
+        font-size: 23px;
+        line-height: 1.4;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .hero-divider {
+        margin: 25px auto 30px;
+    }
+
+    .hero button {
+        font-size: 15px;
+        padding: 15px 30px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .about-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-title h2 {
+        font-size: 38px;
+        text-align: center;
+    }
+
+    .about-photo {
+        margin-top: 30px;
+    }
+
+    .about-photo::before {
+        width: 270px;
+        height: 270px;
+        left: 50%;
+        top: 15px;
+        transform: translateX(-50%);
+    }
+
+    .about-photo img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-text {
+        border-left: none;
+        border-top: 4px solid #CC6600;
+        padding-left: 0;
+        padding-top: 30px;
+        max-width: none;
+        line-height: 1.8;
+    }
+
+    .about-text p {
+        margin-bottom: 28px;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    .portfolio-intro {
+        text-align: left;
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 35px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+        gap: 22px;
+        margin-top: 40px;
+    }
+
+    .tile,
+    .large,
+    .wide,
+    .tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .polaroid {
+        padding: 12px 12px 45px;
+    }
+
+    .polaroid img {
+        height: 190px;
+    }
+
+    .polaroid p {
+        margin-top: 12px;
+        font-size: 16px;
+    }
+
+
+    /* ---------- FRAMEWORKS ---------- */
+
+    .framework-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 45px;
+    }
+
+    .framework-card {
+        height: 300px;
+    }
+
+    .framework-front,
+    .framework-back {
+        box-sizing: border-box;
+        padding: 30px 25px;
+    }
+
+    .framework-front h3 {
+        font-size: 34px;
+        margin-bottom: 12px;
+    }
+
+    .framework-front span {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .framework-back p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    /* ---------- QUOTE ---------- */
+
+    .quote-section {
+        box-sizing: border-box;
+        min-height: 55vh;
+        padding: 80px 25px;
+        font-size: 32px;
+    }
+
+    .quote-section p {
+        font-size: clamp(28px, 8vw, 38px);
+        line-height: 1.3;
+    }
+
+
+    /* ---------- HOW I WORK ---------- */
+
+    .work-slider {
+        width: 100%;
+        gap: 10px;
+        margin-top: 45px;
+    }
+
+    .work-track {
+        width: calc(100% - 80px);
+        max-width: none;
+    }
+
+    .work-slide {
+        box-sizing: border-box;
+        padding: 35px 25px;
+        width: 100%;
+    }
+
+    .work-slide h3 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin: 18px 0;
+    }
+
+    .work-slide p {
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .work-slide ul {
+        columns: 1;
+    }
+
+    .work-slide li {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    .slider-btn {
+        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    #contact {
+        min-height: auto;
+        padding: 90px 0;
+    }
+
+    .contact-content {
+        max-width: none;
+    }
+
+    .contact-intro {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 35px;
+    }
+
+    .contact-links a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    nav {
+        padding: 14px 15px;
+    }
+
+    nav h2 {
+        font-size: 25px;
+    }
+
+    nav ul {
+        gap: 6px 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
+
+    .section h2 {
+        font-size: 37px;
+    }
+
+    .section-number {
+        font-size: 75px;
+    }
+
+    .hero {
+        padding: 55px 20px 75px;
+        gap: 40px;
+    }
+
+    .hero img {
+        width: 250px;
+        height: 310px;
+    }
+
+    .sage-blob {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-statement {
+        font-size: 21px;
+    }
+
+    .gallery {
+        grid-auto-rows: 220px;
+        gap: 18px;
+    }
+
+    .framework-card {
+        height: 280px;
+    }
+
+    .work-track {
+        width: calc(100% - 60px);
+    }
+
+    .work-slide {
+        padding: 30px 20px;
+    }
+
+    .work-slide h3 {
+        font-size: 27px;
+    }
+
+    .quote-section {
+        min-height: 50vh;
+        padding: 70px 20px;
+    }
+
+    .quote-section p {
+        font-size: 27px;
+    }
+
+}
