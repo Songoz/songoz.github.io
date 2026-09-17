@@ -1481,3 +1481,813 @@ footer a {
     }
 
 }
+/* =========================================================
+   NEW DISCLOSURE LAB LAYOUT
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.dashboard-hero {
+    position: relative;
+
+    min-height: 82vh;
+
+    padding: 90px 6vw 70px;
+
+    overflow: hidden;
+}
+
+
+.dashboard-hero-grid {
+    max-width: 1400px;
+
+    min-height: 700px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+.dashboard-hero-copy {
+    padding-left: 3vw;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.dashboard-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.18em;
+
+    font-weight: 600;
+
+    color: #727d4d;
+}
+
+
+.dashboard-hero-copy h1 {
+    max-width: 620px;
+
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 5vw, 5.3rem);
+
+    line-height: 1.04;
+
+    font-weight: 500;
+
+    color: #35421f;
+}
+
+
+.dashboard-accent-line {
+    width: 75px;
+
+    height: 3px;
+
+    margin-top: 34px;
+
+    border-radius: 10px;
+
+    background: #c56b35;
+}
+
+
+/* =========================================================
+   TREE AREA
+   ========================================================= */
+
+.dashboard-hero-tree {
+    position: relative;
+
+    min-height: 680px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.dashboard-hero-tree .tree-container {
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   WHY THIS DASHBOARD EXISTS
+   ========================================================= */
+
+.dashboard-explanation {
+    position: relative;
+
+    padding: 130px 6vw 135px;
+
+    background: #f1eee5;
+}
+
+
+.dashboard-explanation-inner {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 65px;
+}
+
+
+.dashboard-explanation-label {
+    padding-top: 10px;
+}
+
+
+.dashboard-section-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.16em;
+
+    color: #8a9078;
+}
+
+
+.dashboard-explanation-content h2 {
+    margin: 0 0 28px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2.6rem, 4vw, 4rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #35421f;
+}
+
+
+.dashboard-explanation-content p {
+    max-width: 780px;
+
+    margin: 0 0 20px;
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+
+    color: #64675d;
+}
+
+
+.dashboard-explanation-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 35px 0 30px;
+
+    background: rgba(74, 93, 35, 0.14);
+}
+
+
+.dashboard-explanation-content .lab-introduction {
+    margin-bottom: 0;
+
+    color: #4d5541;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DISCLOSURE LAB
+   ========================================================= */
+
+.disclosure-lab-section {
+    position: relative;
+
+    padding: 130px 6vw 150px;
+
+    background: #faf8f2;
+}
+
+
+.disclosure-lab-header {
+    max-width: 1000px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+
+.disclosure-lab-header h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 5vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    color: #35421f;
+}
+
+
+/* =========================================================
+   REPORTING AREA BOX
+   ========================================================= */
+
+.reporting-area-box {
+    max-width: 1200px;
+
+    margin: 0 auto 85px;
+
+    padding: 42px;
+
+    border-radius: 30px;
+
+    background: #f1eee5;
+
+    border: 1px solid rgba(74, 93, 35, 0.12);
+
+    box-shadow:
+        0 18px 50px rgba(60, 65, 45, 0.06);
+}
+
+
+.reporting-area-heading {
+    margin-bottom: 30px;
+}
+
+
+.reporting-area-heading h3 {
+    margin: 0 0 8px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.9rem;
+
+    font-weight: 500;
+
+    color: #35421f;
+}
+
+
+.reporting-area-heading p {
+    margin: 0;
+
+    font-size: 0.94rem;
+
+    line-height: 1.6;
+
+    color: #6b6d63;
+}
+
+
+.reporting-area-buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   TOPIC BUTTONS
+   ========================================================= */
+
+.reporting-topic-button {
+    min-height: 105px;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns: 34px 1fr 20px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    border-radius: 19px;
+
+    background: #faf8f2;
+
+    border: 1px solid rgba(74, 93, 35, 0.1);
+
+    cursor: pointer;
+
+    font-family: "Inter", sans-serif;
+
+    color: #41463a;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.reporting-topic-button:hover {
+    transform: translateY(-4px);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 28px rgba(65, 65, 45, 0.08);
+}
+
+
+.reporting-topic-button:focus-visible {
+    outline: 2px solid #6d7847;
+
+    outline-offset: 3px;
+}
+
+
+.topic-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.45rem;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #596742;
+}
+
+
+.topic-button-text {
+    font-size: 0.82rem;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+}
+
+
+.reporting-topic-button strong {
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    color: #737b61;
+}
+
+
+/* Individual subtle identities */
+
+.climate-topic:hover {
+    border-color: rgba(117, 134, 77, 0.45);
+}
+
+
+.resources-topic:hover {
+    border-color: rgba(146, 112, 90, 0.45);
+}
+
+
+.people-topic:hover {
+    border-color: rgba(168, 86, 50, 0.4);
+}
+
+
+.governance-topic:hover {
+    border-color: rgba(96, 118, 141, 0.45);
+}
+
+
+/* =========================================================
+   COMPANY CASE STUDIES
+   ========================================================= */
+
+.company-case-studies {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 32px;
+}
+
+
+.company-case-card {
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: #f1eee5;
+
+    border: 1px solid rgba(60, 65, 45, 0.1);
+
+    box-shadow:
+        0 20px 55px rgba(60, 60, 45, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.company-case-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 28px 65px rgba(60, 60, 45, 0.12);
+}
+
+
+.company-case-image {
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #dfe3d1;
+}
+
+
+.company-case-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.company-case-card:hover .company-case-image img {
+    transform: scale(1.035);
+}
+
+
+.company-case-tag {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 8px 13px;
+
+    border-radius: 100px;
+
+    background: rgba(250, 248, 242, 0.94);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.12em;
+
+    font-weight: 600;
+
+    color: #4d5541;
+}
+
+
+.company-case-content {
+    padding: 34px 38px 40px;
+}
+
+
+.company-sector {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.16em;
+
+    font-weight: 600;
+}
+
+
+.company-case-content h3 {
+    margin: 0 0 17px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 2.3rem;
+
+    font-weight: 500;
+
+    color: #35421f;
+}
+
+
+.company-profile {
+    margin: 0;
+
+    font-size: 0.92rem;
+
+    line-height: 1.75;
+
+    color: #66695e;
+}
+
+
+.case-study-focus {
+    margin-top: 25px;
+
+    padding: 17px 18px;
+
+    border-radius: 15px;
+
+    background: rgba(250, 248, 242, 0.7);
+}
+
+
+.case-study-focus span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    color: #898b7e;
+}
+
+
+.case-study-focus strong {
+    font-size: 0.87rem;
+
+    font-weight: 500;
+
+    color: #4e5544;
+}
+
+
+.company-case-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 27px;
+
+    padding: 12px 18px;
+
+    border-radius: 100px;
+
+    text-decoration: none;
+
+    font-size: 0.78rem;
+
+    font-weight: 500;
+
+    color: #ffffff;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.company-case-button span {
+    font-size: 1rem;
+}
+
+
+.company-case-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(60, 60, 45, 0.13);
+}
+
+
+/* =========================================================
+   COMPANY COLOUR IDENTITIES
+   ========================================================= */
+
+.icarus-card .company-sector {
+    color: #75864d;
+}
+
+
+.icarus-card .company-case-button {
+    background: #75864d;
+}
+
+
+.orion-card .company-sector {
+    color: #92705a;
+}
+
+
+.orion-card .company-case-button {
+    background: #92705a;
+}
+
+
+.galactic-card .company-sector {
+    color: #a85632;
+}
+
+
+.galactic-card .company-case-button {
+    background: #a85632;
+}
+
+
+.sdb-card .company-sector {
+    color: #60768d;
+}
+
+
+.sdb-card .company-case-button {
+    background: #60768d;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .dashboard-hero-grid {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        gap: 20px;
+    }
+
+
+    .dashboard-hero-copy {
+        padding-left: 0;
+
+        text-align: center;
+    }
+
+
+    .dashboard-hero-copy h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .dashboard-accent-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .dashboard-hero-tree {
+        min-height: 650px;
+    }
+
+
+    .reporting-area-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .dashboard-explanation-inner {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .dashboard-explanation-label {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+
+    .dashboard-section-number {
+        margin-bottom: 0;
+    }
+
+
+    .company-case-studies {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-hero {
+        padding: 60px 5vw 50px;
+    }
+
+
+    .dashboard-hero-copy h1 {
+        font-size: 2.8rem;
+    }
+
+
+    .dashboard-hero-tree {
+        min-height: 480px;
+    }
+
+
+    .dashboard-explanation {
+        padding: 90px 5vw;
+    }
+
+
+    .disclosure-lab-section {
+        padding: 90px 5vw 100px;
+    }
+
+
+    .reporting-area-box {
+        padding: 27px;
+    }
+
+
+    .reporting-area-buttons {
+        grid-template-columns: 1fr;
+    }
+
+
+    .company-case-image {
+        height: 260px;
+    }
+
+
+    .company-case-content {
+        padding: 30px 26px 35px;
+    }
+
+
+    .company-case-content h3 {
+        font-size: 2rem;
+    }
+
+}
