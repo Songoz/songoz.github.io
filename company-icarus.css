@@ -168,7 +168,28 @@ a {
 
     border-radius: 3px 3px 0 0;
 }
+.dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    margin-left: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
 
+.dashboard-button:hover {
+    background: var(--icarus-green);
+    border-color: var(--icarus-green);
+    color: #ffffff;
+}
 
 /* =========================================================
    PAGE
@@ -187,7 +208,10 @@ a {
 ========================================================= */
 
 .icarus-card {
-    width: min(1180px, calc(100% - 50px));
+    
+    background: var(--icarus-blue);
+   
+   width: min(1180px, calc(100% - 50px));
 
     margin: 0 auto;
 
@@ -536,6 +560,10 @@ a {
     margin-top: -1px;
 
     overflow: hidden;
+   margin: 0 24px 24px;
+    border-radius: 30px;
+    overflow: hidden;
+    background: var(--sheet);
 }
 
 
