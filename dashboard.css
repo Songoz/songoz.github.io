@@ -1,0 +1,1228 @@
+/* =========================================================
+   RUFARO SONGORE
+   SUSTAINABILITY DISCLOSURE LAB
+   DASHBOARD STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #F8F5ED;
+    color: #292A24;
+    line-height: 1.7;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.dashboard-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 21px 6%;
+
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(43, 43, 38, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav-name {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    font-weight: 700;
+    color: #4A5D23;
+}
+
+.nav-links a {
+    color: #292A24;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #C56B35;
+}
+
+
+/* =========================================================
+   GENERAL TYPOGRAPHY
+   ========================================================= */
+
+.dashboard-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+
+    color: #727D4D;
+}
+
+.eyebrow {
+    margin: 0 0 15px;
+
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+
+    color: #727D4D;
+}
+
+
+/* =========================================================
+   HERO
+   LEFT TEXT + RIGHT TREE
+   ========================================================= */
+
+.dashboard-hero {
+    position: relative;
+
+    min-height: 88vh;
+
+    padding: 70px 6vw 80px;
+
+    overflow: hidden;
+}
+
+.dashboard-hero-grid {
+    max-width: 1450px;
+
+    min-height: 760px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+/* ---------------------------------------------------------
+   HERO COPY
+   --------------------------------------------------------- */
+
+.dashboard-hero-copy {
+    position: relative;
+
+    padding-left: 3vw;
+
+    z-index: 3;
+}
+
+.dashboard-hero-copy h1 {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 5vw, 5.3rem);
+
+    line-height: 1.04;
+
+    font-weight: 500;
+
+    color: #35421F;
+}
+
+.dashboard-accent-line {
+    width: 75px;
+    height: 3px;
+
+    margin-top: 34px;
+
+    border-radius: 10px;
+
+    background: #C56B35;
+}
+
+
+/* ---------------------------------------------------------
+   HERO TREE
+   --------------------------------------------------------- */
+
+.dashboard-hero-tree {
+    position: relative;
+
+    min-height: 720px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.dashboard-hero-tree .tree-container {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   TREE
+   DO NOT CHANGE THE SVG
+   ========================================================= */
+
+.tree-section {
+    width: 100%;
+
+    min-width: 0;
+
+    text-align: center;
+}
+
+.tree-label {
+    margin: 0 0 8px;
+
+    color: #C56B35;
+
+    font-size: 0.66rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+.tree-stage {
+    position: relative;
+
+    height: 700px;
+
+    overflow: visible;
+}
+
+.dashboard-tree {
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+
+/* ---------------------------------------------------------
+   TREE SWAY
+   --------------------------------------------------------- */
+
+.tree-wind {
+    transform-box: fill-box;
+
+    transform-origin: 50% 100%;
+
+    animation: treeSway 7s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   TREE COLOUR DEPTH
+   --------------------------------------------------------- */
+
+.leaf-cluster.light ellipse {
+    fill: #71893C;
+}
+
+.leaf-cluster.dark ellipse {
+    fill: #34491A;
+}
+
+
+/* ---------------------------------------------------------
+   TREE FOOTNOTE
+   --------------------------------------------------------- */
+
+.tree-instruction {
+    margin: -5px 0 0;
+
+    color: #8A8A80;
+
+    font-size: 11px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   FALLING LEAVES
+   ========================================================= */
+
+.falling-leaves {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: visible;
+
+    z-index: 10;
+}
+
+.falling-leaf {
+    position: absolute;
+
+    width: 17px;
+    height: 26px;
+
+    opacity: 0;
+
+    transform-origin: 50% 50%;
+
+    animation: fallingLeaf linear forwards;
+}
+
+.falling-leaf::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #5F782D;
+
+    border-radius:
+        100% 0 100% 0;
+
+    transform: rotate(45deg);
+}
+
+.falling-leaf::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 18px;
+
+    left: 8px;
+    top: 5px;
+
+    background: rgba(63, 63, 34, 0.45);
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   WHY THIS DASHBOARD EXISTS
+   ========================================================= */
+
+.dashboard-explanation {
+    position: relative;
+
+    padding: 130px 6vw 135px;
+
+    background: #F1EEE5;
+}
+
+.dashboard-explanation-inner {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 65px;
+}
+
+.dashboard-explanation-label {
+    padding-top: 10px;
+}
+
+.dashboard-section-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.16em;
+
+    color: #8A9078;
+}
+
+.dashboard-explanation-content h2 {
+    margin: 0 0 28px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2.6rem, 4vw, 4rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #35421F;
+}
+
+.dashboard-explanation-content p {
+    max-width: 780px;
+
+    margin: 0 0 20px;
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+
+    color: #64675D;
+}
+
+.dashboard-explanation-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 35px 0 30px;
+
+    background: rgba(74, 93, 35, 0.14);
+}
+
+.dashboard-explanation-content .lab-introduction {
+    margin-bottom: 0;
+
+    color: #4D5541;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DISCLOSURE LAB
+   ========================================================= */
+
+.disclosure-lab-section {
+    position: relative;
+
+    padding: 130px 6vw 150px;
+
+    background: #FAF8F2;
+}
+
+.disclosure-lab-header {
+    max-width: 1000px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+.disclosure-lab-header h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 5vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    color: #35421F;
+}
+
+
+/* =========================================================
+   REPORTING AREA BOX
+   ========================================================= */
+
+.reporting-area-box {
+    max-width: 1200px;
+
+    margin: 0 auto 90px;
+
+    padding: 42px;
+
+    border-radius: 30px;
+
+    background: #F1EEE5;
+
+    border: 1px solid rgba(74, 93, 35, 0.12);
+
+    box-shadow:
+        0 18px 50px rgba(60, 65, 45, 0.06);
+}
+
+.reporting-area-heading {
+    margin-bottom: 30px;
+}
+
+.reporting-area-heading h3 {
+    margin: 0 0 8px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.9rem;
+
+    font-weight: 500;
+
+    color: #35421F;
+}
+
+.reporting-area-heading p {
+    margin: 0;
+
+    font-size: 0.94rem;
+
+    line-height: 1.6;
+
+    color: #6B6D63;
+}
+
+
+/* =========================================================
+   REPORTING TOPIC BUTTONS
+   ========================================================= */
+
+.reporting-area-buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.reporting-topic-button {
+    min-height: 105px;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns: 34px 1fr 20px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    border-radius: 19px;
+
+    background: #FAF8F2;
+
+    border: 1px solid rgba(74, 93, 35, 0.1);
+
+    cursor: default;
+
+    font-family: "Inter", sans-serif;
+
+    color: #41463A;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.reporting-topic-button:hover {
+    transform: translateY(-4px);
+
+    background: #FFFFFF;
+
+    box-shadow:
+        0 12px 28px rgba(65, 65, 45, 0.08);
+}
+
+.reporting-topic-button:focus-visible {
+    outline: 2px solid #6D7847;
+
+    outline-offset: 3px;
+}
+
+.topic-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #596742;
+}
+
+.topic-icon svg {
+    width: 30px;
+    height: 30px;
+
+    display: block;
+}
+
+.topic-button-text {
+    font-size: 0.82rem;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+}
+
+.reporting-topic-button strong {
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    color: #737B61;
+}
+
+
+/* ---------------------------------------------------------
+   TOPIC IDENTITIES
+   --------------------------------------------------------- */
+
+.climate-topic:hover {
+    border-color: rgba(117, 134, 77, 0.45);
+}
+
+.resources-topic:hover {
+    border-color: rgba(146, 112, 90, 0.45);
+}
+
+.people-topic:hover {
+    border-color: rgba(168, 86, 50, 0.4);
+}
+
+.governance-topic:hover {
+    border-color: rgba(96, 118, 141, 0.45);
+}
+
+
+/* =========================================================
+   COMPANY CASE STUDIES
+   ========================================================= */
+
+.company-case-studies {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 32px;
+}
+
+.company-case-card {
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: #F1EEE5;
+
+    border: 1px solid rgba(60, 65, 45, 0.1);
+
+    box-shadow:
+        0 20px 55px rgba(60, 60, 45, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.company-case-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 28px 65px rgba(60, 60, 45, 0.12);
+}
+
+
+/* =========================================================
+   CASE STUDY IMAGES
+   ========================================================= */
+
+.company-case-image {
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #DFE3D1;
+}
+
+.company-case-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.company-case-card:hover .company-case-image img {
+    transform: scale(1.035);
+}
+
+.company-case-tag {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 8px 13px;
+
+    border-radius: 100px;
+
+    background: rgba(250, 248, 242, 0.94);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.12em;
+
+    font-weight: 600;
+
+    color: #4D5541;
+}
+
+
+/* =========================================================
+   CASE STUDY CONTENT
+   ========================================================= */
+
+.company-case-content {
+    padding: 34px 38px 40px;
+}
+
+.company-sector {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.16em;
+
+    font-weight: 600;
+}
+
+.company-case-content h3 {
+    margin: 0 0 17px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 2.3rem;
+
+    font-weight: 500;
+
+    color: #35421F;
+}
+
+.company-profile {
+    margin: 0;
+
+    font-size: 0.92rem;
+
+    line-height: 1.75;
+
+    color: #66695E;
+}
+
+.case-study-focus {
+    margin-top: 25px;
+
+    padding: 17px 18px;
+
+    border-radius: 15px;
+
+    background: rgba(250, 248, 242, 0.7);
+}
+
+.case-study-focus span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    color: #898B7E;
+}
+
+.case-study-focus strong {
+    font-size: 0.87rem;
+
+    font-weight: 500;
+
+    color: #4E5544;
+}
+
+
+/* ---------------------------------------------------------
+   CASE STUDY BUTTONS
+   --------------------------------------------------------- */
+
+.company-case-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 27px;
+
+    padding: 12px 18px;
+
+    border-radius: 100px;
+
+    text-decoration: none;
+
+    font-size: 0.78rem;
+
+    font-weight: 500;
+
+    color: #FFFFFF;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.company-case-button span {
+    font-size: 1rem;
+}
+
+.company-case-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(60, 60, 45, 0.13);
+}
+
+
+/* =========================================================
+   COMPANY COLOUR IDENTITIES
+   ========================================================= */
+
+.icarus-card .company-sector {
+    color: #75864D;
+}
+
+.icarus-card .company-case-button {
+    background: #75864D;
+}
+
+
+.orion-card .company-sector {
+    color: #92705A;
+}
+
+.orion-card .company-case-button {
+    background: #92705A;
+}
+
+
+.galactic-card .company-sector {
+    color: #A85632;
+}
+
+.galactic-card .company-case-button {
+    background: #A85632;
+}
+
+
+.sdb-card .company-sector {
+    color: #60768D;
+}
+
+.sdb-card .company-case-button {
+    background: #60768D;
+}
+
+
+/* =========================================================
+   FRAMEWORK SECTION
+   ========================================================= */
+
+.framework-explore {
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 100px 5% 120px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    border-top: 1px solid rgba(43, 43, 38, 0.1);
+}
+
+.framework-heading h2 {
+    margin: 0 0 15px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(35px, 4vw, 55px);
+
+    line-height: 1.1;
+
+    color: #35421F;
+}
+
+.framework-heading > p:last-child {
+    max-width: 520px;
+
+    color: #74746A;
+
+    font-size: 15px;
+}
+
+.framework-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.framework-buttons button {
+    padding: 20px;
+
+    border: 1px solid rgba(74, 93, 35, 0.25);
+
+    background: transparent;
+
+    color: #4A5D23;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: default;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    border-top: 1px solid rgba(43, 43, 38, 0.1);
+
+    padding: 30px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #77776D;
+
+    font-size: 12px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #4A5D23;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #C56B35;
+}
+
+
+/* =========================================================
+   TREE ANIMATION
+   KEEPING YOUR EXISTING BEHAVIOUR
+   ========================================================= */
+
+@keyframes treeSway {
+
+    0% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(1.3deg);
+    }
+
+    100% {
+        transform: rotate(-1deg);
+    }
+
+}
+
+
+@keyframes fallingLeaf {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(0, -20px)
+            rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.95;
+    }
+
+    30% {
+        transform:
+            translate(30px, 150px)
+            rotate(85deg);
+    }
+
+    55% {
+        transform:
+            translate(-10px, 340px)
+            rotate(170deg);
+    }
+
+    75% {
+        transform:
+            translate(45px, 540px)
+            rotate(250deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-5px, 760px)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .dashboard-hero-grid {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        gap: 10px;
+    }
+
+    .dashboard-hero-copy {
+        padding-left: 0;
+
+        text-align: center;
+    }
+
+    .dashboard-hero-copy h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dashboard-accent-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dashboard-hero-tree {
+        min-height: 650px;
+    }
+
+    .reporting-area-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .company-case-studies {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .dashboard-explanation-inner {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .dashboard-explanation-label {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .dashboard-section-number {
+        margin-bottom: 0;
+    }
+
+    .framework-explore {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-nav {
+        padding: 18px 5%;
+    }
+
+    .nav-name {
+        font-size: 24px;
+    }
+
+    .dashboard-hero {
+        padding: 60px 5vw 50px;
+    }
+
+    .dashboard-hero-copy h1 {
+        font-size: 2.8rem;
+    }
+
+    .dashboard-hero-tree {
+        min-height: 500px;
+    }
+
+    .tree-stage {
+        height: 500px;
+    }
+
+    .dashboard-explanation {
+        padding: 90px 5vw;
+    }
+
+    .disclosure-lab-section {
+        padding: 90px 5vw 100px;
+    }
+
+    .reporting-area-box {
+        padding: 27px;
+    }
+
+    .reporting-area-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .company-case-image {
+        height: 260px;
+    }
+
+    .company-case-content {
+        padding: 30px 26px 35px;
+    }
+
+    .company-case-content h3 {
+        font-size: 2rem;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .dashboard-hero-copy h1 {
+        font-size: 2.45rem;
+    }
+
+    .reporting-area-box {
+        padding: 20px;
+    }
+
+    .reporting-topic-button {
+        min-height: 90px;
+
+        padding: 17px;
+    }
+
+    .framework-buttons {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tree-wind {
+        animation: none;
+    }
+
+    .falling-leaf {
+        animation: none;
+
+        display: none;
+    }
+
+    * {
+        scroll-behavior: auto;
+    }
+
+}
