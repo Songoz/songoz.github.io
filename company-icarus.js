@@ -1,13 +1,13 @@
 /* =========================================================
    ICARUS WIND & SOLAR
-   Interactive dashboard behaviour
+   Interactive disclosure dashboard
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* -----------------------------------------------------
+    /* =====================================================
        ECOSCORE OPENING ANIMATION
-       ----------------------------------------------------- */
+       ===================================================== */
 
     const ecoScore = document.querySelector(".ecoscore-ring");
 
@@ -18,44 +18,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* -----------------------------------------------------
-       QUARTERLY LINE GRAPH ANIMATION
-       ----------------------------------------------------- */
+    /* =====================================================
+       QUARTERLY GRAPH ANIMATION
+       ===================================================== */
 
     const graphLines = document.querySelectorAll(".trend-line");
     const graphPoints = document.querySelectorAll(".trend-point");
 
-    if (graphLines.length) {
+    graphLines.forEach((line, index) => {
         setTimeout(() => {
-            graphLines.forEach((line, index) => {
-                setTimeout(() => {
-                    line.classList.add("animate-line");
-                }, index * 180);
-            });
-        }, 550);
-    }
+            line.classList.add("animate-line");
+        }, 650 + (index * 180));
+    });
 
-    if (graphPoints.length) {
-        graphPoints.forEach((point, index) => {
-            setTimeout(() => {
-                point.classList.add("show-point");
-            }, 850 + (index * 90));
-        });
-    }
+    graphPoints.forEach((point, index) => {
+        setTimeout(() => {
+            point.classList.add("show-point");
+        }, 1050 + (index * 90));
+    });
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        SCOPE 1 / 2 / 3 INFORMATION
-       -----------------------------------------------------
 
        Desktop:
-       Hovering over a scope item shows the explanation
-       through CSS.
+       Hover displays the information.
 
-       Touch devices:
-       Tapping a scope item keeps the explanation visible.
-       Tapping another scope closes the previous one.
-       ----------------------------------------------------- */
+       Touch:
+       Tap opens the information.
+       ===================================================== */
 
     const scopeItems = document.querySelectorAll(".scope-item");
 
@@ -64,13 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener("click", event => {
             event.stopPropagation();
 
-            const alreadyActive = item.classList.contains("active");
+            const wasActive = item.classList.contains("active");
 
             scopeItems.forEach(scope => {
                 scope.classList.remove("active");
             });
 
-            if (!alreadyActive) {
+            if (!wasActive) {
                 item.classList.add("active");
             }
         });
@@ -78,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* -----------------------------------------------------
-       CLOSE SCOPE POP-UP WHEN CLICKING ELSEWHERE
-       ----------------------------------------------------- */
+    /* =====================================================
+       CLOSE SCOPE INFORMATION
+       ===================================================== */
 
     document.addEventListener("click", () => {
         scopeItems.forEach(item => {
@@ -89,9 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* -----------------------------------------------------
-       ICARUS TITLE TOOLTIP
-       ----------------------------------------------------- */
+    /* =====================================================
+       ICARUS TITLE EVALUATION
+
+       Desktop hover is handled by CSS.
+       Clicking is included for phones/tablets.
+       ===================================================== */
 
     const titleWrap = document.querySelector(".icarus-title-wrap");
 
@@ -106,13 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", () => {
             titleWrap.classList.remove("tooltip-active");
         });
-
     }
 
 
-    /* -----------------------------------------------------
-       PREVENT TOOLTIP CLICK FROM CLOSING IT
-       ----------------------------------------------------- */
+    /* =====================================================
+       STOP TITLE TOOLTIP FROM CLOSING ITSELF
+       ===================================================== */
 
     const tooltip = document.querySelector(".icarus-tooltip");
 
