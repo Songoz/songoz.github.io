@@ -1,0 +1,1041 @@
+/* =========================================================
+   ICARUS WIND & SOLAR
+   CLIMATE & EMISSIONS CASE STUDY
+   Corporate disclosure dashboard
+   ========================================================= */
+
+:root {
+    --icarus-deep: #183b38;
+    --icarus-green: #3f7465;
+    --icarus-mid: #6d9788;
+    --icarus-sage: #dce9e2;
+    --icarus-pale: #edf3ef;
+    --icarus-gold: #c39a4b;
+    --icarus-gold-pale: #eee1c5;
+
+    --ink: #233331;
+    --muted: #697674;
+    --line: #d9e0dc;
+
+    --paper: #f6f5f0;
+    --white: #ffffff;
+
+    --negative: #3f7465;
+    --positive: #a75d4e;
+
+    --shadow: 0 8px 25px rgba(24, 59, 56, 0.055);
+    --shadow-hover: 0 14px 34px rgba(24, 59, 56, 0.11);
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.icarus-page {
+    width: min(1280px, 92%);
+    margin: 0 auto;
+    padding: 28px 0 65px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.icarus-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.icarus-nav a {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.icarus-nav a:hover {
+    color: var(--icarus-deep);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.icarus-hero {
+    position: relative;
+    min-height: 350px;
+    display: flex;
+    align-items: flex-end;
+
+    margin-top: 24px;
+    padding: 52px;
+
+    overflow: visible;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(24, 59, 56, 0.93) 0%,
+            rgba(24, 59, 56, 0.78) 46%,
+            rgba(24, 59, 56, 0.30) 100%
+        ),
+        url("images/icarus-wind-solar.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 4px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    color: var(--white);
+}
+
+.case-label {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: var(--icarus-gold-pale);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.icarus-title-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.icarus-title {
+    display: inline-block;
+
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    font-weight: 400;
+    line-height: 0.95;
+
+    cursor: help;
+}
+
+.icarus-intro {
+    max-width: 690px;
+    margin-top: 20px;
+
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+.update-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 20px;
+    padding: 7px 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+}
+
+.update-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #b7d7c8;
+}
+
+
+/* =========================================================
+   ICARUS TITLE EVALUATION
+   ========================================================= */
+
+.icarus-tooltip {
+    position: absolute;
+    z-index: 100;
+
+    top: calc(100% + 18px);
+    left: 0;
+
+    width: 390px;
+    padding: 22px;
+
+    background: var(--white);
+    color: var(--ink);
+
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--icarus-gold);
+
+    box-shadow: var(--shadow-hover);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-7px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.icarus-title-wrap:hover .icarus-tooltip,
+.icarus-title-wrap.tooltip-active .icarus-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.icarus-tooltip h3 {
+    margin-bottom: 10px;
+
+    color: var(--icarus-deep);
+    font-size: 0.84rem;
+    letter-spacing: 0.03em;
+}
+
+.icarus-tooltip p {
+    margin-bottom: 10px;
+
+    color: var(--muted);
+    font-size: 0.76rem;
+    line-height: 1.65;
+}
+
+.icarus-tooltip p:last-child {
+    margin-bottom: 0;
+}
+
+.icarus-tooltip strong {
+    color: var(--icarus-deep);
+}
+
+
+/* =========================================================
+   FICTIONAL COMPANY NOTICE
+   ========================================================= */
+
+.data-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    margin-top: 22px;
+    padding: 14px 17px;
+
+    border-left: 3px solid var(--icarus-gold);
+    background: #f0ede4;
+
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.6;
+}
+
+.data-notice strong {
+    color: var(--icarus-deep);
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.dashboard-section {
+    margin-top: 58px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    color: var(--icarus-deep);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 3vw, 2.55rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.section-heading p {
+    max-width: 550px;
+
+    color: var(--muted);
+    font-size: 0.76rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TOP OVERVIEW
+   ========================================================= */
+
+.climate-overview {
+    display: grid;
+    grid-template-columns: 0.95fr 0.95fr 1.45fr;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.dashboard-card {
+    position: relative;
+
+    min-width: 0;
+    padding: 23px;
+
+    background: var(--white);
+    border: 1px solid var(--line);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.dashboard-card h3 {
+    color: var(--icarus-deep);
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    margin-top: 3px;
+
+    color: var(--muted);
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   ECOSCORE
+   ========================================================= */
+
+.ecoscore-card {
+    min-height: 385px;
+}
+
+.ecoscore-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 285px;
+}
+
+
+/*
+   The outer ring is the Scope 1 / 2 / 3 composition.
+
+   Scope 1 = 33.5%
+   Scope 2 = 8.8%
+   Scope 3 = 57.7%
+*/
+
+.ecoscore-ring {
+    position: relative;
+
+    width: 235px;
+    height: 235px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--icarus-deep) 0deg 120.6deg,
+            var(--icarus-gold) 120.6deg 152.3deg,
+            var(--icarus-mid) 152.3deg 360deg
+        );
+
+    transform: scale(0.55) rotate(-120deg);
+    opacity: 0;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.ecoscore-ring.animate-in {
+    animation:
+        ecoScoreEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ecoscore-ring:hover {
+    transform: scale(1.08) rotate(0deg);
+    box-shadow: 0 15px 35px rgba(63, 116, 101, 0.17);
+}
+
+.ecoscore-ring::before {
+    content: "";
+
+    position: absolute;
+    inset: 21px;
+
+    border-radius: 50%;
+    background: var(--white);
+}
+
+.ecoscore-centre {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.ecoscore-number {
+    color: var(--icarus-deep);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3.45rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.ecoscore-label {
+    margin-top: 5px;
+
+    color: var(--icarus-green);
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.ecoscore-description {
+    max-width: 245px;
+    margin: 5px auto 0;
+
+    color: var(--muted);
+    font-size: 0.65rem;
+    line-height: 1.5;
+}
+
+@keyframes ecoScoreEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.45) rotate(-130deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.04) rotate(8deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   SCOPE COMPOSITION
+   ========================================================= */
+
+.scope-card {
+    overflow: visible;
+}
+
+.scope-chart-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 205px;
+}
+
+.scope-donut {
+    position: relative;
+
+    width: 165px;
+    height: 165px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--icarus-deep) 0% 33.5%,
+            var(--icarus-gold) 33.5% 42.3%,
+            var(--icarus-mid) 42.3% 100%
+        );
+
+    transition: transform 0.25s ease;
+}
+
+.scope-donut:hover {
+    transform: scale(1.045);
+}
+
+.scope-donut::before {
+    content: "";
+
+    position: absolute;
+    inset: 39px;
+
+    border-radius: 50%;
+    background: var(--white);
+}
+
+.scope-total {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.scope-total strong {
+    color: var(--icarus-deep);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.scope-total span {
+    color: var(--muted);
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+
+/* =========================================================
+   SCOPE LEGEND
+   ========================================================= */
+
+.scope-legend {
+    display: grid;
+    gap: 2px;
+}
+
+.scope-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 37px;
+    padding: 6px 7px;
+
+    border-bottom: 1px solid var(--line);
+
+    cursor: help;
+}
+
+.scope-item:last-child {
+    border-bottom: none;
+}
+
+.scope-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.scope-marker {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.scope-1-marker {
+    background: var(--icarus-deep);
+}
+
+.scope-2-marker {
+    background: var(--icarus-gold);
+}
+
+.scope-3-marker {
+    background: var(--icarus-mid);
+}
+
+.scope-item strong {
+    color: var(--ink);
+    font-size: 0.72rem;
+}
+
+.scope-value {
+    color: var(--muted);
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   SCOPE INFORMATION POP-UP
+   ========================================================= */
+
+.scope-popover {
+    position: absolute;
+    z-index: 50;
+
+    right: 0;
+    bottom: calc(100% + 9px);
+
+    width: 305px;
+    padding: 17px;
+
+    background: var(--icarus-deep);
+    color: var(--white);
+
+    border-radius: 3px;
+    box-shadow: var(--shadow-hover);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(5px);
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease,
+        visibility 0.18s ease;
+}
+
+.scope-item:hover .scope-popover,
+.scope-item.active .scope-popover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scope-popover h4 {
+    margin-bottom: 8px;
+
+    color: var(--icarus-gold-pale);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.scope-popover p {
+    margin-bottom: 8px;
+
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.68rem;
+    line-height: 1.6;
+}
+
+.scope-popover p:last-child {
+    margin-bottom: 0;
+}
+
+.scope-popover strong {
+    color: white;
+}
+
+
+/* =========================================================
+   KPI TRACKER
+   ========================================================= */
+
+.kpi-card {
+    overflow: hidden;
+}
+
+.kpi-table-wrapper {
+    margin-top: 21px;
+    overflow-x: auto;
+}
+
+.kpi-table {
+    width: 100%;
+    min-width: 420px;
+
+    border-collapse: collapse;
+
+    font-size: 0.71rem;
+}
+
+.kpi-table thead {
+    background: var(--icarus-pale);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.kpi-table th {
+    padding: 9px 8px;
+
+    color: var(--muted);
+    font-size: 0.61rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.kpi-table th:first-child,
+.kpi-table td:first-child {
+    text-align: left;
+}
+
+.kpi-table td {
+    padding: 13px 8px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--ink);
+    text-align: right;
+}
+
+.kpi-table tbody tr:hover {
+    background: #f8faf8;
+}
+
+.kpi-name {
+    display: block;
+
+    color: var(--icarus-deep);
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+.kpi-unit {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+    font-size: 0.59rem;
+}
+
+.kpi-change {
+    font-weight: 700;
+}
+
+.change-down {
+    color: var(--negative);
+}
+
+.change-up {
+    color: var(--positive);
+}
+
+
+/* =========================================================
+   QUARTERLY TRENDS
+   ========================================================= */
+
+.trends-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.trend-card {
+    min-width: 0;
+    padding: 20px;
+}
+
+.trend-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 14px;
+}
+
+.trend-header h3 {
+    margin-bottom: 3px;
+    font-size: 0.82rem;
+}
+
+.trend-unit {
+    color: var(--muted);
+    font-size: 0.61rem;
+}
+
+.trend-value {
+    color: var(--icarus-deep);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.trend-chart {
+    display: block;
+
+    width: 100%;
+    height: 145px;
+}
+
+.trend-grid-line {
+    stroke: var(--line);
+    stroke-width: 1;
+}
+
+.trend-axis {
+    fill: var(--muted);
+    font-size: 9px;
+}
+
+.trend-line {
+    fill: none;
+
+    stroke: var(--icarus-green);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+}
+
+.trend-line.animate-line {
+    animation: drawLine 1.35s ease forwards;
+}
+
+.trend-point {
+    fill: var(--white);
+    stroke: var(--icarus-green);
+    stroke-width: 2;
+
+    opacity: 0;
+}
+
+.trend-point.show-point {
+    animation: pointAppear 0.25s ease forwards;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes pointAppear {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   DISCLOSURE ASSESSMENT
+   ========================================================= */
+
+.disclosure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.disclosure-card {
+    padding: 24px;
+}
+
+.disclosure-list {
+    margin-top: 15px;
+}
+
+.disclosure-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.disclosure-row:last-child {
+    border-bottom: none;
+}
+
+.disclosure-row strong {
+    color: var(--icarus-deep);
+    font-size: 0.7rem;
+}
+
+.disclosure-row span {
+    color: var(--muted);
+    font-size: 0.7rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.icarus-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 60px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .climate-overview {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .kpi-card {
+        grid-column: 1 / -1;
+    }
+
+    .trends-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 780px) {
+
+    .icarus-page {
+        width: 94%;
+        padding-bottom: 45px;
+    }
+
+    .icarus-hero {
+        min-height: 390px;
+        padding: 32px;
+    }
+
+    .climate-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-card {
+        grid-column: auto;
+    }
+
+    .trends-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading p {
+        margin-top: 10px;
+    }
+
+    .disclosure-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .icarus-tooltip {
+        width: min(350px, 85vw);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .icarus-hero {
+        min-height: 410px;
+        padding: 25px;
+    }
+
+    .icarus-title {
+        font-size: 3.2rem;
+    }
+
+    .dashboard-card {
+        padding: 18px;
+    }
+
+    .ecoscore-ring {
+        width: 215px;
+        height: 215px;
+    }
+
+    .scope-popover {
+        left: 0;
+        right: auto;
+        width: min(290px, 82vw);
+    }
+
+    .icarus-footer {
+        display: block;
+    }
+}
