@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Sustainability Disclosure Lab | Rufaro Songore
+    </title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- DASHBOARD CSS -->
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav class="dashboard-nav">
+
+        <div class="nav-name">
+            Rufaro Songore
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Back to Portfolio
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         01. DASHBOARD HERO
+         LEFT = MESSAGE
+         RIGHT = TREE
+         ===================================================== -->
+
+    <section class="dashboard-hero">
+
+
+        <div class="dashboard-hero-grid">
+
+
+            <!-- =============================================
+                 LEFT SIDE
+                 ============================================= -->
+
+            <div class="dashboard-hero-copy">
+
+
+                <span class="dashboard-eyebrow">
+                    SUSTAINABILITY DISCLOSURE LAB
+                </span>
+
+
+                <h1>
+                    A healthier planet means stronger businesses with better communication.
+                </h1>
+
+
+                <div class="dashboard-accent-line"></div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 RIGHT SIDE
+                 EXISTING TREE
+                 ============================================= -->
+
+            <div class="dashboard-hero-tree">
+
+
+                <div class="tree-section">
+
+
+                    <div class="tree-label">
+                        REPORTING ECOSYSTEM
+                    </div>
+
+
+                    <div class="tree-stage">
+
+
+                        <!-- FALLING LEAVES -->
+
+                        <div
+                            class="falling-leaves"
+                            id="falling-leaves"
+                        ></div>
+
+
+
+                        <!-- =================================================
+                             YOUR ORIGINAL SWAYING TREE
+                             THIS SVG HAS NOT BEEN REDESIGNED
+                             ================================================= -->
+
+                        <svg
+                            class="dashboard-tree"
+                            viewBox="0 0 700 900"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-label="Illustrated sustainability reporting tree"
+                            role="img"
+                        >
+
+
+                            <defs>
+
+
+                                <!-- TRUNK GRADIENT -->
+
+                                <linearGradient
+                                    id="trunkGradient"
+                                    x1="0"
+                                    y1="0"
+                                    x2="1"
+                                    y2="0"
+                                >
+
+                                    <stop
+                                        offset="0%"
+                                        stop-color="#49351C"
+                                    />
+
+                                    <stop
+                                        offset="45%"
+                                        stop-color="#704C28"
+                                    />
+
+                                    <stop
+                                        offset="100%"
+                                        stop-color="#4E391F"
+                                    />
+
+                                </linearGradient>
+
+
+
+                                <!-- LEAF GRADIENT -->
+
+                                <linearGradient
+                                    id="leafGradient"
+                                    x1="0"
+                                    y1="0"
+                                    x2="1"
+                                    y2="1"
+                                >
+
+                                    <stop
+                                        offset="0%"
+                                        stop-color="#6F873B"
+                                    />
+
+                                    <stop
+                                        offset="100%"
+                                        stop-color="#3E541E"
+                                    />
+
+                                </linearGradient>
+
+
+
+                                <!-- TREE SHADOW -->
+
+                                <filter
+                                    id="treeShadow"
+                                    x="-30%"
+                                    y="-30%"
+                                    width="160%"
+                                    height="170%"
+                                >
+
+                                    <feDropShadow
+                                        dx="0"
+                                        dy="18"
+                                        stdDeviation="18"
+                                        flood-opacity="0.15"
+                                    />
+
+                                </filter>
+
+
+                            </defs>
+
+
+
+                            <!-- =============================================
+                                 GROUND
+                                 ============================================= -->
+
+                            <ellipse
+                                cx="350"
+                                cy="820"
+                                rx="250"
+                                ry="35"
+                                fill="#53652E"
+                                opacity="0.10"
+                            />
+
+
+                            <path
+                                d="M100 805
+                                   C180 790 245 800 315 797
+                                   C390 794 475 808 585 795"
+                                fill="none"
+                                stroke="#78633B"
+                                stroke-width="7"
+                                stroke-linecap="round"
+                                opacity="0.55"
+                            />
+
+
+
+                            <!-- =============================================
+                                 TREE WIND GROUP
+                                 KEEP THIS CLASS
+                                 ============================================= -->
+
+                            <g
+                                class="tree-wind"
+                                filter="url(#treeShadow)"
+                            >
+
+
+                                <!-- ROOTS -->
+
+                                <path
+                                    d="M288 750
+                                       C255 770 225 788 182 805
+                                       C221 803 258 793 293 776
+                                       C270 799 250 820 235 837
+                                       C264 820 291 800 314 778
+
+                                       C337 783 365 786 391 779
+
+                                       C419 799 448 819 481 835
+                                       C463 811 442 791 421 776
+
+                                       C461 792 502 801 545 802
+                                       C503 786 466 769 431 749
+
+                                       C385 763 334 765 288 750 Z"
+                                    fill="#634321"
+                                />
+
+
+
+                                <!-- MAIN TRUNK -->
+
+                                <path
+                                    d="M284 760
+
+                                       C289 690 296 620 302 554
+
+                                       C308 490 316 426 330 362
+
+                                       C320 331 301 302 270 271
+
+                                       C297 287 320 309 333 336
+
+                                       C346 306 371 279 405 250
+
+                                       C374 286 354 318 346 350
+
+                                       C361 418 373 484 382 553
+
+                                       C391 620 402 691 416 760
+
+                                       C373 780 326 780 284 760 Z"
+                                    fill="url(#trunkGradient)"
+                                    stroke="#47331C"
+                                    stroke-width="3"
+                                    stroke-linejoin="round"
+                                />
+
+
+
+                                <!-- MAJOR BRANCH LEFT -->
+
+                                <path
+                                    d="M333 365
+                                       C295 347 258 320 222 286
+                                       C181 247 143 213 91 185
+                                       C126 216 153 251 180 286
+                                       C218 335 260 365 307 388
+                                       C322 395 335 382 333 365 Z"
+                                    fill="#684725"
+                                />
+
+
+
+                                <!-- MAJOR BRANCH RIGHT -->
+
+                                <path
+                                    d="M343 365
+                                       C383 344 418 318 454 286
+                                       C493 251 535 217 592 187
+                                       C551 218 520 250 492 284
+                                       C453 329 413 365 364 388
+                                       C349 395 340 382 343 365 Z"
+                                    fill="#684725"
+                                />
+
+
+
+                                <!-- SECONDARY BRANCH LEFT -->
+
+                                <path
+                                    d="M222 287
+                                       C188 270 157 246 126 216
+                                       C149 253 175 284 207 306
+                                       C219 314 229 299 222 287 Z"
+                                    fill="#78532C"
+                                />
+
+
+
+                                <!-- SECONDARY BRANCH RIGHT -->
+
+                                <path
+                                    d="M455 287
+                                       C490 267 522 245 554 215
+                                       C529 250 502 282 470 305
+                                       C458 313 448 298 455 287 Z"
+                                    fill="#78532C"
+                                />
+
+
+
+                                <!-- OUTER LEFT BRANCH -->
+
+                                <path
+                                    d="M181 286
+                                       C151 276 119 263 88 245
+                                       C113 269 143 289 175 299
+                                       C185 302 188 292 181 286 Z"
+                                    fill="#805A31"
+                                />
+
+
+
+                                <!-- OUTER RIGHT BRANCH -->
+
+                                <path
+                                    d="M492 284
+                                       C524 273 554 257 583 236
+                                       C557 265 531 286 500 299
+                                       C490 303 485 291 492 284 Z"
+                                    fill="#805A31"
+                                />
+
+
+
+                                <!-- =========================================
+                                     BARK DETAILS
+                                     ========================================= -->
+
+                                <path
+                                    d="M323 420
+                                       C330 470 326 520 319 575
+                                       C315 625 313 680 320 727"
+                                    fill="none"
+                                    stroke="#8A6338"
+                                    stroke-width="7"
+                                    stroke-linecap="round"
+                                    opacity="0.42"
+                                />
+
+
+                                <path
+                                    d="M351 401
+                                       C361 459 360 516 368 568
+                                       C375 620 380 674 388 724"
+                                    fill="none"
+                                    stroke="#382A18"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                    opacity="0.38"
+                                />
+
+
+                                <path
+                                    d="M300 610
+                                       C319 602 339 605 353 615"
+                                    fill="none"
+                                    stroke="#3E2C18"
+                                    stroke-width="4"
+                                    opacity="0.38"
+                                />
+
+
+                                <path
+                                    d="M359 650
+                                       C377 643 390 647 402 655"
+                                    fill="none"
+                                    stroke="#956C3C"
+                                    stroke-width="4"
+                                    opacity="0.30"
+                                />
+
+
+
+                                <!-- =========================================
+                                     CANOPY CLUSTERS
+                                     ========================================= -->
+
+                                <g class="canopy canopy-one">
+
+
+                                    <ellipse
+                                        cx="155"
+                                        cy="185"
+                                        rx="100"
+                                        ry="82"
+                                        fill="#435B22"
+                                    />
+
+
+                                    <ellipse
+                                        cx="235"
+                                        cy="130"
+                                        rx="115"
+                                        ry="92"
+                                        fill="#58732B"
+                                    />
+
+
+                                    <ellipse
+                                        cx="350"
+                                        cy="105"
+                                        rx="125"
+                                        ry="98"
+                                        fill="#4D6825"
+                                    />
+
+
+                                    <ellipse
+                                        cx="470"
+                                        cy="135"
+                                        rx="120"
+                                        ry="95"
+                                        fill="#5A742C"
+                                    />
+
+
+                                    <ellipse
+                                        cx="550"
+                                        cy="195"
+                                        rx="100"
+                                        ry="82"
+                                        fill="#435B22"
+                                    />
+
+
+                                </g>
+
+
+
+                                <!-- =========================================
+                                     CANOPY DEPTH
+                                     ========================================= -->
+
+                                <g class="leaf-cluster light">
+
+
+                                    <ellipse
+                                        cx="112"
+                                        cy="166"
+                                        rx="45"
+                                        ry="35"
+                                    />
+
+
+                                    <ellipse
+                                        cx="184"
+                                        cy="116"
+                                        rx="55"
+                                        ry="39"
+                                    />
+
+
+                                    <ellipse
+                                        cx="269"
+                                        cy="82"
+                                        rx="55"
+                                        ry="38"
+                                    />
+
+
+                                    <ellipse
+                                        cx="365"
+                                        cy="70"
+                                        rx="58"
+                                        ry="42"
+                                    />
+
+
+                                    <ellipse
+                                        cx="454"
+                                        cy="95"
+                                        rx="52"
+                                        ry="39"
+                                    />
+
+
+                                    <ellipse
+                                        cx="530"
+                                        cy="153"
+                                        rx="52"
+                                        ry="38"
+                                    />
+
+
+                                    <ellipse
+                                        cx="589"
+                                        cy="215"
+                                        rx="42"
+                                        ry="32"
+                                    />
+
+
+                                </g>
+
+
+
+                                <g class="leaf-cluster dark">
+
+
+                                    <ellipse
+                                        cx="145"
+                                        cy="225"
+                                        rx="58"
+                                        ry="43"
+                                    />
+
+
+                                    <ellipse
+                                        cx="225"
+                                        cy="190"
+                                        rx="62"
+                                        ry="46"
+                                    />
+
+
+                                    <ellipse
+                                        cx="315"
+                                        cy="155"
+                                        rx="68"
+                                        ry="49"
+                                    />
+
+
+                                    <ellipse
+                                        cx="400"
+                                        cy="165"
+                                        rx="65"
+                                        ry="48"
+                                    />
+
+
+                                    <ellipse
+                                        cx="488"
+                                        cy="200"
+                                        rx="62"
+                                        ry="45"
+                                    />
+
+
+                                    <ellipse
+                                        cx="545"
+                                        cy="245"
+                                        rx="50"
+                                        ry="38"
+                                    />
+
+
+                                </g>
+
+
+
+                                <!-- =========================================
+                                     INDIVIDUAL ORGANIC LEAVES
+                                     ========================================= -->
+
+                                <g class="organic-leaves">
+
+
+                                    <path
+                                        d="M100 135
+                                           C72 112 78 81 108 69
+                                           C129 94 126 119 100 135 Z"
+                                        fill="#71893C"
+                                    />
+
+
+                                    <path
+                                        d="M165 95
+                                           C143 72 149 44 180 36
+                                           C197 63 191 86 165 95 Z"
+                                        fill="#60792E"
+                                    />
+
+
+                                    <path
+                                        d="M238 70
+                                           C216 47 222 20 252 12
+                                           C269 39 263 61 238 70 Z"
+                                        fill="#7B9345"
+                                    />
+
+
+                                    <path
+                                        d="M320 54
+                                           C297 30 305 5 336 0
+                                           C351 28 345 48 320 54 Z"
+                                        fill="#5B762A"
+                                    />
+
+
+                                    <path
+                                        d="M408 68
+                                           C429 44 423 18 394 9
+                                           C377 37 383 59 408 68 Z"
+                                        fill="#769040"
+                                    />
+
+
+                                    <path
+                                        d="M486 93
+                                           C510 69 503 43 474 35
+                                           C456 62 461 84 486 93 Z"
+                                        fill="#5F792E"
+                                    />
+
+
+                                    <path
+                                        d="M550 135
+                                           C577 111 570 83 542 72
+                                           C521 98 526 121 550 135 Z"
+                                        fill="#738B3C"
+                                    />
+
+
+                                </g>
+
+
+
+                                <!-- =========================================
+                                     LOWER CANOPY LEAVES
+                                     ========================================= -->
+
+                                <g class="lower-leaves">
+
+
+                                    <path
+                                        d="M95 240
+                                           C71 218 77 190 108 181
+                                           C125 208 120 231 95 240 Z"
+                                        fill="#526B27"
+                                    />
+
+
+                                    <path
+                                        d="M138 286
+                                           C114 263 120 237 150 227
+                                           C169 253 163 276 138 286 Z"
+                                        fill="#6F883A"
+                                    />
+
+
+                                    <path
+                                        d="M560 240
+                                           C585 218 579 190 548 181
+                                           C531 208 536 231 560 240 Z"
+                                        fill="#526B27"
+                                    />
+
+
+                                    <path
+                                        d="M515 286
+                                           C539 263 533 237 503 227
+                                           C484 253 490 276 515 286 Z"
+                                        fill="#6F883A"
+                                    />
+
+
+                                </g>
+
+
+
+                                <!-- =========================================
+                                     SMALL TWIGS
+                                     ========================================= -->
+
+                                <path
+                                    d="M205 305
+                                       C177 288 158 270 143 247"
+                                    fill="none"
+                                    stroke="#593D20"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+
+
+                                <path
+                                    d="M470 305
+                                       C498 288 518 269 535 245"
+                                    fill="none"
+                                    stroke="#593D20"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+
+
+                                <path
+                                    d="M274 280
+                                       C254 255 244 229 239 205"
+                                    fill="none"
+                                    stroke="#5C4021"
+                                    stroke-width="7"
+                                    stroke-linecap="round"
+                                />
+
+
+                                <path
+                                    d="M417 278
+                                       C439 252 450 226 456 203"
+                                    fill="none"
+                                    stroke="#5C4021"
+                                    stroke-width="7"
+                                    stroke-linecap="round"
+                                />
+
+
+                            </g>
+
+
+                        </svg>
+
+
+                    </div>
+
+
+                    <p class="tree-instruction">
+                        Watch the reporting ecosystem grow.
+                    </p>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02. WHY THIS DASHBOARD EXISTS
+         ===================================================== -->
+
+    <section class="dashboard-explanation">
+
+
+        <div class="dashboard-explanation-inner">
+
+
+            <div class="dashboard-explanation-label">
+
+                <span class="dashboard-section-number">
+                    01
+                </span>
+
+                <span class="dashboard-eyebrow">
+                    THE PURPOSE
+                </span>
+
+            </div>
+
+
+
+            <div class="dashboard-explanation-content">
+
+
+                <h2>
+                    Why this dashboard exists
+                </h2>
+
+
+                <p>
+                    Sustainability reports can stretch across more than a hundred
+                    pages, leaving important information buried among disclosures,
+                    calculations and supporting documentation.
+                </p>
+
+
+                <p>
+                    For a public stakeholder, finding the figure that actually
+                    matters can become a project of its own.
+                </p>
+
+
+                <p>
+                    This dashboard takes a different approach. It brings selected
+                    sustainability information into a visual environment where
+                    claims, figures and missing evidence can be examined together.
+                </p>
+
+
+                <div class="dashboard-explanation-divider"></div>
+
+
+                <p class="lab-introduction">
+                    The Disclosure Lab presents four fictional companies with
+                    different approaches to sustainability reporting. Each case
+                    study focuses on a specific reporting area and examines how
+                    information is presented, what evidence is available, and
+                    where disclosure could be strengthened.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03. DISCLOSURE LAB
+         ===================================================== -->
+
+    <section
+        id="disclosure-lab"
+        class="disclosure-lab-section"
+    >
+
+
+        <div class="disclosure-lab-header">
+
+
+            <span class="dashboard-section-number">
+                02
+            </span>
+
+
+            <span class="dashboard-eyebrow">
+                CASE STUDY COLLECTION
+            </span>
+
+
+            <h2>
+                The Disclosure Lab
+            </h2>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             REPORTING AREA BUTTONS
+             ================================================= -->
+
+        <div class="reporting-area-box">
+
+
+            <div class="reporting-area-heading">
+
+
+                <h3>
+                    Reporting areas
+                </h3>
+
+
+                <p>
+                    Select an area of sustainability reporting to explore
+                    the case studies.
+                </p>
+
+
+            </div>
+
+
+
+            <div class="reporting-area-buttons">
+
+
+                <!-- CLIMATE & EMISSIONS -->
+
+                <button
+                    type="button"
+                    class="reporting-topic-button climate-topic"
+                    aria-label="Climate and Emissions"
+                >
+
+                    <span
+                        class="topic-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 32 32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <path
+                                d="M8 21.5
+                                   C5.8 21.5 4 19.8 4 17.6
+                                   C4 15.6 5.5 13.9 7.5 13.6
+                                   C8.1 10.4 10.9 8 14.2 8
+                                   C17.2 8 19.8 10 20.7 12.8
+                                   C24.6 12.7 27.5 15.1 27.5 18.2
+                                   C27.5 21.1 25.2 23.5 22.2 23.5
+                                   H8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </span>
+
+
+                    <span class="topic-button-text">
+                        Climate &amp; Emissions
+                    </span>
+
+
+                    <strong aria-hidden="true">
+                        →
+                    </strong>
+
+                </button>
+
+
+
+                <!-- RESOURCES & CIRCULARITY -->
+
+                <button
+                    type="button"
+                    class="reporting-topic-button resources-topic"
+                    aria-label="Resources and Circularity"
+                >
+
+                    <span
+                        class="topic-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 32 32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <path
+                                d="M11 7
+                                   L16 7
+                                   L13.7 11"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M11 7
+                                   C7.5 8.6 5.5 11.6 5.5 15
+                                   C5.5 17 6.2 18.8 7.4 20.3"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M21 25
+                                   L16 25
+                                   L18.3 21"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M21 25
+                                   C24.5 23.4 26.5 20.4 26.5 17
+                                   C26.5 15 25.8 13.2 24.6 11.7"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M7.4 20.3
+                                   C9.3 22.5 12.1 24 15.2 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M24.6 11.7
+                                   C22.7 9.5 19.9 8 16.8 8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </span>
+
+
+                    <span class="topic-button-text">
+                        Resources &amp; Circularity
+                    </span>
+
+
+                    <strong aria-hidden="true">
+                        →
+                    </strong>
+
+                </button>
+
+
+
+                <!-- PEOPLE & COMMUNITIES -->
+
+                <button
+                    type="button"
+                    class="reporting-topic-button people-topic"
+                    aria-label="People and Communities"
+                >
+
+                    <span
+                        class="topic-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 32 32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <circle
+                                cx="16"
+                                cy="9"
+                                r="3"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <circle
+                                cx="8.5"
+                                cy="14"
+                                r="2.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <circle
+                                cx="23.5"
+                                cy="14"
+                                r="2.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <path
+                                d="M10.5 25
+                                   C10.5 20.8 12.7 18.5 16 18.5
+                                   C19.3 18.5 21.5 20.8 21.5 25"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M4.5 24
+                                   C4.5 20.7 6 19 8.5 19
+                                   C10 19 11 19.6 11.8 20.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M20.2 20.5
+                                   C21 19.6 22 19 23.5 19
+                                   C26 19 27.5 20.7 27.5 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </span>
+
+
+                    <span class="topic-button-text">
+                        People &amp; Communities
+                    </span>
+
+
+                    <strong aria-hidden="true">
+                        →
+                    </strong>
+
+                </button>
+
+
+
+                <!-- GOVERNANCE & ETHICS -->
+
+                <button
+                    type="button"
+                    class="reporting-topic-button governance-topic"
+                    aria-label="Governance and Ethics"
+                >
+
+                    <span
+                        class="topic-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 32 32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <path
+                                d="M16 5
+                                   L25 9
+                                   V15
+                                   C25 20.2 21.5 24.3 16 27
+                                   C10.5 24.3 7 20.2 7 15
+                                   V9
+                                   Z"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M11.5 15.5
+                                   L14.5 18.5
+                                   L20.5 12.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </span>
+
+
+                    <span class="topic-button-text">
+                        Governance &amp; Ethics
+                    </span>
+
+
+                    <strong aria-hidden="true">
+                        →
+                    </strong>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOUR CASE STUDIES
+             ================================================= -->
+
+        <div class="company-case-studies">
+
+
+            <!-- =============================================
+                 CASE STUDY 01
+                 ICARUS
+                 ============================================= -->
+
+            <article class="company-case-card icarus-card">
+
+
+                <div class="company-case-image">
+
+                    <img
+                        src="images/icarus-wind-solar.jpg"
+                        alt="Icarus Wind and Solar case study"
+                    >
+
+                    <span class="company-case-tag">
+                        CASE STUDY 01
+                    </span>
+
+                </div>
+
+
+
+                <div class="company-case-content">
+
+
+                    <span class="company-sector">
+                        RENEWABLE ENERGY
+                    </span>
+
+
+                    <h3>
+                        Icarus Wind &amp; Solar
+                    </h3>
+
+
+                    <p class="company-profile">
+                        A renewable energy company that presents climate
+                        performance through clearly defined indicators,
+                        targets, charts and regularly updated sustainability
+                        information.
+                    </p>
+
+
+                    <div class="case-study-focus">
+
+                        <span>
+                            Reporting focus
+                        </span>
+
+                        <strong>
+                            Climate &amp; Emissions
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="company-icarus.html"
+                        class="company-case-button"
+                    >
+
+                        Examine disclosure
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =============================================
+                 CASE STUDY 02
+                 ORION'S CLOTHING
+                 ============================================= -->
+
+            <article class="company-case-card orion-card">
+
+
+                <div class="company-case-image">
+
+                    <img
+                        src="images/orion-clothing.jpg"
+                        alt="Orion's Clothing case study"
+                    >
+
+                    <span class="company-case-tag">
+                        CASE STUDY 02
+                    </span>
+
+                </div>
+
+
+
+                <div class="company-case-content">
+
+
+                    <span class="company-sector">
+                        APPAREL &amp; TEXTILES
+                    </span>
+
+
+                    <h3>
+                        Orion's Clothing
+                    </h3>
+
+
+                    <p class="company-profile">
+                        A clothing company that places measurable resource
+                        use, circularity initiatives and progress indicators
+                        at the centre of its sustainability communication.
+                    </p>
+
+
+                    <div class="case-study-focus">
+
+                        <span>
+                            Reporting focus
+                        </span>
+
+                        <strong>
+                            Resources &amp; Circularity
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="company-orion.html"
+                        class="company-case-button"
+                    >
+
+                        Examine disclosure
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =============================================
+                 CASE STUDY 03
+                 GALACTIC ENERGIES
+                 ============================================= -->
+
+            <article class="company-case-card galactic-card">
+
+
+                <div class="company-case-image">
+
+                    <img
+                        src="images/galactic-greenwashing.jpg"
+                        alt="Galactic Energies case study"
+                    >
+
+                    <span class="company-case-tag">
+                        CASE STUDY 03
+                    </span>
+
+                </div>
+
+
+
+                <div class="company-case-content">
+
+
+                    <span class="company-sector">
+                        ENERGY &amp; PETROLEUM
+                    </span>
+
+
+                    <h3>
+                        Galactic Energies
+                    </h3>
+
+
+                    <p class="company-profile">
+                        A petroleum company whose sustainability communication
+                        relies heavily on broad social and environmental
+                        claims while providing limited evidence of measurable
+                        outcomes.
+                    </p>
+
+
+                    <div class="case-study-focus">
+
+                        <span>
+                            Reporting focus
+                        </span>
+
+                        <strong>
+                            People &amp; Communities
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="company-galactic.html"
+                        class="company-case-button"
+                    >
+
+                        Examine disclosure
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =============================================
+                 CASE STUDY 04
+                 SDB TECH
+                 ============================================= -->
+
+            <article class="company-case-card sdb-card">
+
+
+                <div class="company-case-image">
+
+                    <img
+                        src="images/sdb-tech.jpg"
+                        alt="SDB Tech case study"
+                    >
+
+                    <span class="company-case-tag">
+                        CASE STUDY 04
+                    </span>
+
+                </div>
+
+
+
+                <div class="company-case-content">
+
+
+                    <span class="company-sector">
+                        HOME SECURITY TECHNOLOGY
+                    </span>
+
+
+                    <h3>
+                        SDB Tech
+                    </h3>
+
+
+                    <p class="company-profile">
+                        A technology company that communicates sustainability
+                        priorities prominently while providing limited public
+                        detail on its governance practices and measurable
+                        progress.
+                    </p>
+
+
+                    <div class="case-study-focus">
+
+                        <span>
+                            Reporting focus
+                        </span>
+
+                        <strong>
+                            Governance &amp; Ethics
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="company-sdb.html"
+                        class="company-case-button"
+                    >
+
+                        Examine disclosure
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FRAMEWORKS
+         ===================================================== -->
+
+    <section class="framework-explore">
+
+
+        <div class="framework-heading">
+
+
+            <p class="eyebrow">
+                REPORTING FRAMEWORKS
+            </p>
+
+
+            <h2>
+                The standards behind the information.
+            </h2>
+
+
+            <p>
+                Framework references will connect the case studies
+                to the reporting standards and principles used to
+                assess sustainability disclosure.
+            </p>
+
+
+        </div>
+
+
+
+        <div class="framework-buttons">
+
+
+            <button type="button">
+                GRI
+            </button>
+
+
+            <button type="button">
+                ISO 14064
+            </button>
+
+
+            <button type="button">
+                CSRD
+            </button>
+
+
+            <button type="button">
+                ESRS
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+
+        <p>
+            Rufaro Songore · Sustainability Reporting Portfolio
+        </p>
+
+
+        <a href="index.html">
+            Return to portfolio →
+        </a>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="dashboard.js"></script>
+
+
+</body>
+
+</html>
