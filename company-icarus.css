@@ -78,12 +78,23 @@ html {
 }
 
 body {
-
     min-height: 100vh;
-
     margin: 0;
 
-    background: var(--cream);
+    background-color: #123B5D;
+
+    background-image:
+        linear-gradient(
+            rgba(18, 59, 93, 0.28),
+            rgba(18, 59, 93, 0.28)
+        ),
+        url("images/icarus_background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
 
     color: var(--ink);
 
@@ -110,7 +121,7 @@ body::before {
 
     background-repeat: repeat;
 
-    opacity: .045;
+    opacity: .025;
 
     pointer-events: none;
 
@@ -307,11 +318,12 @@ h4 {
 ========================================================= */
 
 .icarus-page {
-
     width: 100%;
 
     padding:
-        85px 0 90px;
+        110px 0 120px;
+
+    position: relative;
 }
 
 
