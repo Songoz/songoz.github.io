@@ -265,9 +265,9 @@ h4 {
 }
 
 
-/* Dashboard button */
+/* lab button */
 
-.lab-button {
+.sustainability-disclosure-lab-button {
 
     align-self: center;
 
@@ -303,7 +303,7 @@ h4 {
         transform .25s ease;
 }
 
-.lab-button:hover {
+.sustainability-disclosure-lab-button:hover {
 
     background: var(--orange);
 
