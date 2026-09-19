@@ -6,27 +6,24 @@
 
 :root {
     --icarus-blue: #123B5D;
+    --icarus-blue-deep: #0B2F49;
     --icarus-blue-light: #4F7895;
+
     --icarus-green: #72A66A;
+    --icarus-green-dark: #416F60;
     --icarus-green-light: #A8C99F;
-    --icarus-page-blue: #0B2F49;
+
+    --icarus-gold: #C4A05D;
+
     --sheet: #FFFFFF;
-}
+    --sheet-soft: #F0F3EF;
 
-    --icarus-gold: #c4a05d;
-
-    --sheet: #f8f8f5;
-    --sheet-soft: #f0f3ef;
-
-    --ink: #20302d;
+    --ink: #20302D;
     --muted: #697672;
+    --line: #D8E0DB;
+    --positive: #A85E4C;
 
-    --line: #d8e0db;
-
-    --positive: #a85e4c;
-
-    --shadow:
-        0 35px 90px rgba(4, 20, 32, 0.28);
+    --shadow: 0 35px 90px rgba(4, 20, 32, 0.28);
 }
 
 
@@ -46,17 +43,14 @@ html {
 
 body {
     min-height: 100vh;
+    margin: 0;
 
-    background:
-        margin: 0;
-    background: var(--icarus-page-blue);
-    color: #17232C;
-       linear-gradient(
-            145deg,
-            var(--icarus-blue-deep),
-            var(--icarus-blue) 48%,
-            #173d57
-        );
+    background: linear-gradient(
+        145deg,
+        var(--icarus-blue-deep),
+        var(--icarus-blue) 48%,
+        #173D57
+    );
 
     color: var(--ink);
 
@@ -200,11 +194,8 @@ a {
 
 .icarus-page {
     width: 100%;
-
-    padding:
-        0 0 90px;
+    padding: 85px 0 90px;
 }
-
 
 /* =========================================================
    GIANT CASE STUDY CARD
@@ -218,7 +209,7 @@ a {
 
     margin: 0 auto;
 
-    border-radius: 0 0 34px 34px;
+    border-radius: 34px;
 
     box-shadow: var(--shadow);
 
@@ -552,15 +543,15 @@ a {
 /* =========================================================
    WHITE REPORT SHEET
 ========================================================= */
-
 .icarus-sheet {
-    width: min(1180px, calc(100% - 80px));
-    margin: 70px auto;
-   padding: 60px;
-    background: var(--icarus-blue);
-    border-radius: 32px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: var(--sheet);
+
+    border-radius: 0 0 32px 32px;
     overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
 }
 
 
@@ -816,7 +807,7 @@ a {
 }
 
 .eco-segment-2 {
-    stroke: var(--icarus-green);
+    stroke: var(--icarus-blue);
 
     stroke-dashoffset: -305.2;
 
@@ -1122,10 +1113,15 @@ a {
     border-radius: 50%;
 
     background: conic-gradient(
-        var(--icarus-blue) 0 33.5%,
-        var(--icarus-green) 33.5% 42.3%,
-        var(--icarus-blue-light) 42.3% 100%
+        #123B5D 0 33.5%,
+        #83A7BF 33.5% 42.3%,
+        #315F7F 42.3% 100%
     );
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
 
     transition:
         transform 0.3s ease;
@@ -1145,6 +1141,49 @@ a {
     background: var(--sheet);
 
     border-radius: 50%;
+}
+.scope-donut::after {
+    content: "Largest source: Scope 3\A57.7% of total emissions";
+
+    white-space: pre-line;
+
+    position: absolute;
+    left: 50%;
+    bottom: -62px;
+
+    width: max-content;
+    max-width: 210px;
+
+    padding: 9px 12px;
+
+    background: var(--icarus-blue);
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 0.68rem;
+    line-height: 1.4;
+    text-align: center;
+
+    box-shadow: 0 10px 24px rgba(18, 59, 93, 0.18);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, 6px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 10;
+}
+
+.scope-donut:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
 }
 
 .donut-centre {
@@ -1222,7 +1261,12 @@ a {
 
 .scope-item:hover,
 .scope-item.active {
-    padding-left: 6px;
+    padding-left: 10px;
+    background: rgba(18, 59, 93, 0.055);
+}
+.scope-item.active .scope-name,
+.scope-item:hover .scope-name {
+    color: var(--icarus-blue);
 }
 
 .scope-marker {
@@ -1233,15 +1277,15 @@ a {
 }
 
 .scope-marker-1 {
-    background: var(--icarus-green);
+    background: #123B5D;
 }
 
 .scope-marker-2 {
-    background: var(--icarus-gold);
+    background: #83A7BF;
 }
 
 .scope-marker-3 {
-    background: var(--icarus-green-dark);
+    background: #315F7F;
 }
 
 .scope-name {
@@ -1584,7 +1628,7 @@ a {
 .trend-point {
     fill: var(--sheet);
 
-    stroke: var(--icarus-green);
+    stroke: var(--icarus-blue);
 
     stroke-width: 2.5;
 
