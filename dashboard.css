@@ -20,7 +20,7 @@ html {
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background: #F8F5ED;
+    background: #F3EAD4;
     color: #292A24;
     line-height: 1.7;
 }
@@ -353,7 +353,7 @@ a {
 
     padding: 130px 6vw 135px;
 
-    background: #F1EEE5;
+    background: #DCE2C8;
 }
 
 .dashboard-explanation-inner {
@@ -381,7 +381,7 @@ a {
 
     letter-spacing: 0.16em;
 
-    color: #8A9078;
+    color: #CC6600;
 }
 
 .dashboard-explanation-content h2 {
@@ -438,7 +438,7 @@ a {
 
     padding: 130px 6vw 150px;
 
-    background: #FAF8F2;
+    background: #F3EAD4;
 }
 
 .disclosure-lab-header {
@@ -447,6 +447,7 @@ a {
     margin: 0 auto 65px;
 
     text-align: center;
+   Colour:#CC6600
 }
 
 .disclosure-lab-header h2 {
@@ -460,7 +461,7 @@ a {
 
     line-height: 1.05;
 
-    color: #35421F;
+     Colour:#CC6600;
 }
 
 
@@ -900,6 +901,7 @@ a {
     align-items: center;
 
     border-top: 1px solid rgba(43, 43, 38, 0.1);
+   Background: #000000
 }
 
 .framework-heading h2 {
@@ -911,13 +913,13 @@ a {
 
     line-height: 1.1;
 
-    color: #35421F;
+    color: #FFFFFF;
 }
 
 .framework-heading > p:last-child {
     max-width: 520px;
 
-    color: #74746A;
+    color: #FFFFFF;
 
     font-size: 15px;
 }
@@ -937,7 +939,7 @@ a {
 
     background: transparent;
 
-    color: #4A5D23;
+    color: #FFFFFF;
 
     font-size: 14px;
 
