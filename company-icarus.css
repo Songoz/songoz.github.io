@@ -267,7 +267,7 @@ h4 {
 
 /* Dashboard button */
 
-.dashboard-button {
+.lab-button {
 
     align-self: center;
 
@@ -303,7 +303,7 @@ h4 {
         transform .25s ease;
 }
 
-.dashboard-button:hover {
+.lab-button:hover {
 
     background: var(--orange);
 
