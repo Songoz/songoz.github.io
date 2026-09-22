@@ -1,0 +1,2399 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BODY
+   Icarus-style fixed background with floating foresheet
+========================================================= */
+
+body {
+
+    position: relative;
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: 'Inter', sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(48, 72, 43, 0.20),
+            rgba(48, 72, 43, 0.20)
+        ),
+        url("images/hands_on_tree.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    color: #2B2B26;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    /*
+       This creates the visible background ABOVE the foresheet.
+       The sheet therefore does not start at the very top of
+       the browser window.
+    */
+
+    padding-top: 40px;
+
+    padding-bottom: 40px;
+
+}
+
+
+/* Paper texture */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image: url("images/paper_texture.png");
+
+    background-repeat: repeat;
+
+    opacity: .045;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+}
+
+
+/* =========================================================
+   FORESHEET
+========================================================= */
+
+/*
+   Your homepage is treated as one large editorial sheet.
+
+   If <main> contains all your sections, this creates the
+   continuous cream sheet from underneath the navigation
+   through to Let's Talk.
+*/
+
+main {
+
+    width: min(1180px, calc(100% - 50px));
+
+    margin: 0 auto;
+
+    background: #F3EAD4;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22);
+
+}
+
+
+/*
+   If the navigation is outside <main>, make it the top
+   portion of the same visual sheet.
+
+   It uses the exact same width and background as main.
+*/
+
+nav {
+
+    width: min(1180px, calc(100% - 50px));
+
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 22px 70px;
+
+    background: #F3EAD4;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.06);
+
+}
+
+
+/*
+   Keep the sheet visually connected to the page below it.
+*/
+
+nav + main {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+
+    padding: 60px 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.section-intro {
+
+    max-width: 700px;
+
+    font-size: 25px;
+
+    line-height: 1.8;
+
+    /*
+       Restored to a readable, prominent paragraph size.
+    */
+
+    color: #FFFFFF;
+
+    margin-bottom: 60px;
+
+}
+
+.section h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 54px;
+
+    color: #4A5D23;
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 40px;
+
+    margin-bottom: 40px;
+
+    text-align: left;
+
+}
+
+.content {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 10%;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   SECTION NUMBERS
+========================================================= */
+
+.section-number {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 3%;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 180px;
+
+    font-weight: 700;
+
+    color: #CC6600;
+
+    opacity: .80;
+
+    line-height: 1;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+#about .section-number {
+
+    left: -90px;
+
+    top: -20px;
+
+}
+
+#portfolio .section-number {
+
+    left: 75%;
+
+    top: -20px;
+
+}
+
+#frameworks .section-number {
+
+    left: -90px;
+
+    top: -20px;
+
+}
+
+#how-i-work .section-number {
+
+    left: 72%;
+
+    top: 10px;
+
+}
+
+#contact .section-number {
+
+    left: -90px;
+
+    top: -20px;
+
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3 {
+
+    font-family: 'Playfair Display', serif;
+
+}
+
+h1 {
+
+    font-size: 75px;
+
+}
+
+h2 {
+
+    font-size: 55px;
+
+}
+
+h3 {
+
+    font-size: 35px;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav h2 {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #4A5D23;
+
+    font-size: 50px;
+
+    font-family: 'Playfair Display', serif;
+
+    margin: 0;
+
+    letter-spacing: 1px;
+
+}
+
+nav ul {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 40px;
+
+    margin: 0;
+
+    padding: 0;
+
+    align-items: center;
+
+}
+
+nav a {
+
+    text-decoration: none;
+
+    color: #2B2B26;
+
+    font-weight: 500;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+
+    position: relative;
+
+}
+
+nav a:hover {
+
+    color: #B55239;
+
+}
+
+nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #D89B2B;
+
+    transition: 0.3s;
+
+}
+
+nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 90px;
+
+    padding: 80px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.hero-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    max-width: 620px;
+
+}
+
+.hero-statement {
+
+    font-size: 30px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    color: #2B2B26;
+
+    margin-top: 20px;
+
+    margin-bottom: 40px;
+
+    max-width: 550px;
+
+}
+
+.image-container {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.sage-blob {
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    background: #A8B58A;
+
+    opacity: 0.85;
+
+    border-radius: 58% 52% 63% 57%;
+
+    top: 40px;
+
+    left: -100px;
+
+    z-index: 0;
+
+}
+
+.hero img {
+
+    width: 350px;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    border: 18px solid #F8F5ED;
+
+    outline: 2px solid #A8B58A;
+
+    box-shadow: 0 20px 40px rgba(74,93,35,0.25);
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.hero h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 60px;
+
+    line-height: 1.1;
+
+    color: #4A5D23;
+
+    margin-bottom: 20px;
+
+}
+
+.hero-tag {
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #CC6600;
+
+    font-weight: 600;
+
+    margin-bottom: 22px;
+
+}
+
+button {
+
+    padding: 18px 42px;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+    background: #CC6600;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+
+}
+
+button:hover {
+
+    background: #4A5D23;
+
+    transform: translateY(-3px);
+
+}
+
+.hero-divider {
+
+    width: 90px;
+
+    height: 3px;
+
+    background: #CC6600;
+
+    margin: 35px 0;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 80px;
+
+    align-items: start;
+
+}
+
+.about-title {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.about-title h2 {
+
+    line-height: .95;
+
+    margin-top: 10px;
+
+    text-align: center;
+
+    font-size: 43px;
+
+}
+
+.about-text {
+
+    line-height: 2;
+
+    max-width: 700px;
+
+}
+
+.about-text p {
+
+    margin-bottom: 35px;
+
+}
+
+.about-text {
+
+    border-left: 4px solid #CC6600;
+
+    padding-left: 45px;
+
+}
+
+
+/*
+   Keep the main paragraph readable rather than tiny.
+*/
+
+.about-text p {
+
+    font-size: 20px;
+
+    line-height: 1.9;
+
+}
+
+.about-photo {
+
+    position: relative;
+
+    display: inline-block;
+
+    margin-top: 45px;
+
+}
+
+.about-photo::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+
+    height: 360px;
+
+    background: #A8B58A;
+
+    opacity: .85;
+
+    border-radius: 50%;
+
+    left: -20px;
+
+    top: 20px;
+
+    z-index: 0;
+
+}
+
+.about-photo img {
+
+    position: relative;
+
+    width: 320px;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   PORTFOLIO COLLAGE
+   ORIGINAL DIMENSIONS PRESERVED
+========================================================= */
+
+.portfolio-intro {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    line-height: 1.8;
+
+    font-size: 20px;
+
+}
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    grid-auto-rows: 230px;
+
+    gap: 28px;
+
+    margin-top: 60px;
+
+}
+
+.tile {
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+
+    transition: .35s;
+
+}
+
+.tile:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.tile img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* Different sizes */
+
+.large {
+
+    grid-column: span 2;
+
+    grid-row: span 2;
+
+}
+
+.wide {
+
+    grid-column: span 2;
+
+}
+
+.tall {
+
+    grid-row: span 2;
+
+}
+
+
+/* Polaroids */
+
+.polaroid {
+
+    background: white;
+
+    padding: 15px 15px 55px;
+
+    box-shadow: 0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.polaroid img {
+
+    height: 180px;
+
+}
+
+.polaroid p {
+
+    text-align: center;
+
+    margin-top: 18px;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #4A5D23;
+
+}
+
+.polaroid:nth-child(3) {
+
+    transform: rotate(-4deg);
+
+}
+
+.polaroid:nth-child(7) {
+
+    transform: rotate(5deg);
+
+}
+
+.polaroid:hover {
+
+    transform: translateY(-8px) rotate(-2deg);
+
+}
+
+
+/* =========================================================
+   DISCLOSURE LAB / DASHBOARD
+========================================================= */
+
+#disclosure-lab,
+#dashboard {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.disclosure-lab {
+
+    padding-top: 80px;
+
+    padding-bottom: 90px;
+
+}
+
+.disclosure-lab .section-number {
+
+    left: 75%;
+
+    top: -20px;
+
+}
+
+.disclosure-lab-content {
+
+    max-width: 850px;
+
+}
+
+.disclosure-lab h2 {
+
+    margin-bottom: 25px;
+
+}
+
+.disclosure-lab p {
+
+    max-width: 760px;
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: #2B2B26;
+
+}
+
+.disclosure-lab-link {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    background: #CC6600;
+
+    color: white;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing: .4px;
+
+    transition: .3s;
+
+}
+
+.disclosure-lab-link:hover {
+
+    background: #4A5D23;
+
+    transform: translateY(-3px);
+
+}
+
+.disclosure-lab-index {
+
+    margin-top: 55px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 15px;
+
+    color: #CC6600;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   FRAMEWORKS
+   ORIGINAL FLIP CARD DESIGN PRESERVED
+========================================================= */
+
+.framework-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 30px;
+
+    margin-top: 70px;
+
+}
+
+.framework-card {
+
+    height: 280px;
+
+    perspective: 1000px;
+
+}
+
+.framework-card-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    transition: transform .7s ease;
+
+    transform-style: preserve-3d;
+
+}
+
+.framework-card:hover .framework-card-inner {
+
+    transform: rotateY(180deg);
+
+}
+
+.framework-front,
+.framework-back {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border: 1px solid rgba(0,0,0,.08);
+
+    background: #FDFBF7;
+
+    padding: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+.framework-front {
+
+    color: #4A5D23;
+
+}
+
+.framework-back {
+
+    transform: rotateY(180deg);
+
+    background: #050505;
+
+    color: white;
+
+}
+
+#framework {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+#framework::before {
+
+    content: "REPORTING";
+
+    position: absolute;
+
+    left: -20px;
+
+    top: 30px;
+
+    font-weight: 700;
+
+    color: #4A5D23;
+
+    opacity: 1;
+
+    letter-spacing: 10px;
+
+    pointer-events: none;
+
+}
+
+.frameworks-front span {
+
+    display: block;
+
+    margin-top: 15px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: #666;
+
+}
+
+
+/* =========================================================
+   HOW I WORK
+   ORIGINAL CODE PRESERVED
+========================================================= */
+
+.how-i-work-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:40px;
+
+margin-top:80px;
+
+}
+
+.how-card{
+
+background:#FDFBF7;
+
+padding:50px;
+
+border-top:2px solid #CC6600;
+border-bottom:1px solid rgba(0,0,0,.08);
+
+box-shadow:none;
+
+transition:.35s;
+
+}
+
+.how-card h3{
+
+font-size:18px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+margin-bottom:30px;
+
+color:#4A5D23;
+
+}
+
+.how-card p{
+
+margin:18px 0;
+
+line-height:1.5;
+
+}
+
+.how-card:hover{
+
+transform:translateY(-6px);
+
+background:#ffffff;
+
+}
+
+.arrow{
+
+width:64px;
+
+height:64px;
+
+border-radius:50%;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.arrow:hover{
+
+transform:translateY(-3px);
+
+background:#4A5D23;
+
+color:white;
+
+}
+
+.work-slider{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:40px;
+
+margin-top:70px;
+
+}
+
+.work-track{
+
+width:760px;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.work-slide{
+
+display:none;
+
+background:#FDFBF7;
+
+padding:70px;
+
+border-left:4px solid #CC6600;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+animation:fade .45s ease;
+
+}
+
+.work-slide.active{
+
+display:block;
+
+}
+
+.slide-number{
+
+font-size:14px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:#CC6600;
+
+font-weight:600;
+
+}
+
+.work-slide h3{
+
+font-size:42px;
+
+margin:20px 0;
+
+color:#4A5D23;
+
+}
+
+.work-slide p{
+
+font-size:21px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+max-width:620px;
+
+}
+
+.work-slide ul{
+
+list-style:none;
+
+padding:0;
+
+margin:0;
+
+columns:2;
+
+}
+
+.work-slide li{
+
+padding:14px 0;
+
+border-bottom:1px solid rgba(0,0,0,.08);
+
+font-size:19px;
+
+}
+
+.slider-btn{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+border:none;
+
+background:white;
+
+color:#4A5D23;
+
+font-size:28px;
+
+cursor:pointer;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.slider-btn:hover{
+
+background:#4A5D23;
+
+color:white;
+
+transform:translateY(-4px);
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateX(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+/* =========================================================
+   QUOTE
+   ORIGINAL IMAGE-BACKGROUND DESIGN RESTORED
+========================================================= */
+
+.quote-section {
+
+    position: relative;
+
+    padding: 120px 12%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(40,50,25,.65),
+            rgba(40,50,25,.65)
+        ),
+        url("images/the_hills_have_eyes.jpeg");
+
+    background-size: cover;
+
+    background-position: center 65%;
+
+    min-height: 80vh;
+
+    width: 100%;
+
+    font-size: 50px;
+
+}
+
+.quote-overlay {
+
+    max-width: 900px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+.quote-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("images/the_hills_have_eyes.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: -2;
+
+}
+
+.quote-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(20,20,20,.58);
+
+    z-index: -1;
+
+}
+
+.quote-section p {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    font-family: 'Playfair Display', serif;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    color: #F8F5ED;
+
+}
+
+
+/* =========================================================
+   CONTACT / LET'S TALK
+   SOLID BLACK
+========================================================= */
+
+#contact {
+
+    background: #050505;
+
+    color: #F8F5ED;
+
+    min-height: 100vh;
+
+}
+
+#contact h2 {
+
+    color: white;
+
+}
+
+.contact-content {
+
+    max-width: 700px;
+
+}
+
+.contact-intro {
+
+    color: rgba(255,255,255,.9);
+
+    line-height: 1.8;
+
+    max-width: 650px;
+
+}
+
+.contact-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-top: 45px;
+
+}
+
+.contact-links a {
+
+    display: inline-block;
+
+    padding: 16px 32px;
+
+    border: 2px solid rgba(255,255,255,.9);
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: 500;
+
+    letter-spacing: .5px;
+
+    transition: .3s;
+
+}
+
+.contact-links a:hover {
+
+    background: white;
+
+    color: #4A5D23;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    width: min(1180px, calc(100% - 50px));
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    html,
+    body {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: hidden;
+
+    }
+
+    body {
+
+        font-size: 17px;
+
+        line-height: 1.7;
+
+        padding-top: 20px;
+
+        padding-bottom: 20px;
+
+    }
+
+    main {
+
+        width: calc(100% - 30px);
+
+    }
+
+    nav {
+
+        width: calc(100% - 30px);
+
+    }
+
+    footer {
+
+        width: calc(100% - 30px);
+
+    }
+
+    .section {
+
+        padding: 70px 0;
+
+    }
+
+    .content {
+
+        width: 100%;
+
+        max-width: none;
+
+        box-sizing: border-box;
+
+        padding: 0 24px;
+
+    }
+
+
+    /* ---------- NAVIGATION ---------- */
+
+    nav {
+
+        padding: 16px 20px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        align-items: center;
+
+    }
+
+    nav h2 {
+
+        font-size: 28px;
+
+        text-align: center;
+
+    }
+
+    nav ul {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px 18px;
+
+    }
+
+    nav a {
+
+        font-size: 13px;
+
+    }
+
+
+    /* ---------- SECTION NUMBERS ---------- */
+
+    .section-number {
+
+        font-size: 90px;
+
+        top: 0;
+
+        left: 10px;
+
+        opacity: .25;
+
+    }
+
+    #about .section-number,
+    #frameworks .section-number,
+    #contact .section-number {
+
+        left: 5px;
+
+        top: 0;
+
+    }
+
+    #portfolio .section-number,
+    #how-i-work .section-number {
+
+        left: auto;
+
+        right: 10px;
+
+        top: 0;
+
+    }
+
+
+    /* ---------- HEADINGS ---------- */
+
+    .section h2 {
+
+        font-size: 42px;
+
+        margin-top: 35px;
+
+        margin-bottom: 30px;
+
+    }
+
+    h1 {
+
+        font-size: 48px;
+
+    }
+
+    h2 {
+
+        font-size: 42px;
+
+    }
+
+    h3 {
+
+        font-size: 28px;
+
+    }
+
+    .section-intro {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+        margin-bottom: 40px;
+
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+
+        min-height: auto;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+
+        padding: 70px 24px 90px;
+
+        text-align: center;
+
+    }
+
+    .image-container {
+
+        width: 100%;
+
+        max-width: 350px;
+
+    }
+
+    .sage-blob {
+
+        width: 280px;
+
+        height: 280px;
+
+        top: 25px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+    }
+
+    .hero img {
+
+        width: min(280px, 80vw);
+
+        height: min(350px, 100vw);
+
+        border-width: 12px;
+
+    }
+
+    .hero-content {
+
+        width: 100%;
+
+        max-width: 600px;
+
+        align-items: center;
+
+    }
+
+    .hero-tag {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.6;
+
+        margin-bottom: 18px;
+
+    }
+
+    .hero h1 {
+
+        font-size: clamp(42px, 12vw, 56px);
+
+        line-height: 1.08;
+
+        margin-bottom: 20px;
+
+    }
+
+    .hero-statement {
+
+        font-size: 23px;
+
+        line-height: 1.4;
+
+        margin-top: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .hero-divider {
+
+        margin: 25px auto 30px;
+
+    }
+
+    .hero button {
+
+        font-size: 15px;
+
+        padding: 15px 30px;
+
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+
+    }
+
+    .about-title {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+    .about-title h2 {
+
+        font-size: 38px;
+
+        text-align: center;
+
+    }
+
+    .about-photo {
+
+        margin-top: 30px;
+
+    }
+
+    .about-photo::before {
+
+        width: 270px;
+
+        height: 270px;
+
+        left: 50%;
+
+        top: 15px;
+
+        transform: translateX(-50%);
+
+    }
+
+    .about-photo img {
+
+        width: 240px;
+
+        height: 240px;
+
+    }
+
+    .about-text {
+
+        border-left: none;
+
+        border-top: 4px solid #CC6600;
+
+        padding-left: 0;
+
+        padding-top: 30px;
+
+        max-width: none;
+
+        line-height: 1.8;
+
+    }
+
+    .about-text p {
+
+        margin-bottom: 28px;
+
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    .portfolio-intro {
+
+        text-align: left;
+
+        font-size: 17px;
+
+        line-height: 1.8;
+
+        margin-bottom: 35px;
+
+    }
+
+    .gallery {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 250px;
+
+        gap: 22px;
+
+        margin-top: 40px;
+
+    }
+
+    .tile,
+    .large,
+    .wide,
+    .tall {
+
+        grid-column: span 1;
+
+        grid-row: span 1;
+
+    }
+
+    .tile img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+    }
+
+    .polaroid {
+
+        padding: 12px 12px 45px;
+
+    }
+
+    .polaroid img {
+
+        height: 190px;
+
+    }
+
+    .polaroid p {
+
+        margin-top: 12px;
+
+        font-size: 16px;
+
+    }
+
+
+    /* ---------- DISCLOSURE LAB ---------- */
+
+    .disclosure-lab {
+
+        padding-top: 65px;
+
+        padding-bottom: 70px;
+
+    }
+
+    .disclosure-lab p {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+    }
+
+    .disclosure-lab-link {
+
+        font-size: 15px;
+
+        padding: 14px 25px;
+
+    }
+
+
+    /* ---------- FRAMEWORKS ---------- */
+
+    .framework-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-top: 45px;
+
+    }
+
+    .framework-card {
+
+        height: 300px;
+
+    }
+
+    .framework-front,
+    .framework-back {
+
+        box-sizing: border-box;
+
+        padding: 30px 25px;
+
+    }
+
+    .framework-front h3 {
+
+        font-size: 34px;
+
+        margin-bottom: 12px;
+
+    }
+
+    .framework-front span {
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+    }
+
+    .framework-back p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* ---------- QUOTE ---------- */
+
+    .quote-section {
+
+        box-sizing: border-box;
+
+        min-height: 55vh;
+
+        padding: 80px 25px;
+
+        font-size: 32px;
+
+    }
+
+    .quote-section p {
+
+        font-size: clamp(28px, 8vw, 38px);
+
+        line-height: 1.3;
+
+    }
+
+
+    /* ---------- HOW I WORK ---------- */
+
+    .work-slider {
+
+        width: 100%;
+
+        gap: 10px;
+
+        margin-top: 45px;
+
+    }
+
+    .work-track {
+
+        width: calc(100% - 80px);
+
+        max-width: none;
+
+    }
+
+    .work-slide {
+
+        box-sizing: border-box;
+
+        padding: 35px 25px;
+
+        width: 100%;
+
+    }
+
+    .work-slide h3 {
+
+        font-size: 30px;
+
+        line-height: 1.2;
+
+        margin: 18px 0;
+
+    }
+
+    .work-slide p {
+
+        font-size: 17px;
+
+        line-height: 1.7;
+
+        margin-bottom: 25px;
+
+    }
+
+    .work-slide ul {
+
+        columns: 1;
+
+    }
+
+    .work-slide li {
+
+        font-size: 16px;
+
+        padding: 10px 0;
+
+    }
+
+    .slider-btn {
+
+        flex-shrink: 0;
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 18px;
+
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    #contact {
+
+        min-height: auto;
+
+        padding: 90px 0;
+
+        background: #050505;
+
+    }
+
+    .contact-content {
+
+        max-width: none;
+
+    }
+
+    .contact-intro {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+    }
+
+    .contact-links {
+
+        flex-direction: column;
+
+        gap: 14px;
+
+        margin-top: 35px;
+
+    }
+
+    .contact-links a {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+
+        padding: 14px 20px;
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+
+        padding-top: 15px;
+
+        padding-bottom: 15px;
+
+    }
+
+    main,
+    nav,
+    footer {
+
+        width: calc(100% - 20px);
+
+    }
+
+    nav {
+
+        padding: 14px 15px;
+
+    }
+
+    nav h2 {
+
+        font-size: 25px;
+
+    }
+
+    nav ul {
+
+        gap: 6px 12px;
+
+    }
+
+    nav a {
+
+        font-size: 12px;
+
+    }
+
+    .section {
+
+        padding: 60px 0;
+
+    }
+
+    .content {
+
+        padding: 0 20px;
+
+    }
+
+    .section h2 {
+
+        font-size: 37px;
+
+    }
+
+    .section-number {
+
+        font-size: 75px;
+
+    }
+
+    .hero {
+
+        padding: 55px 20px 75px;
+
+        gap: 40px;
+
+    }
+
+    .hero img {
+
+        width: 250px;
+
+        height: 310px;
+
+    }
+
+    .sage-blob {
+
+        width: 240px;
+
+        height: 240px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 42px;
+
+    }
+
+    .hero-tag {
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+    .hero-statement {
+
+        font-size: 21px;
+
+    }
+
+    .gallery {
+
+        grid-auto-rows: 220px;
+
+        gap: 18px;
+
+    }
+
+    .framework-card {
+
+        height: 280px;
+
+    }
+
+    .work-track {
+
+        width: calc(100% - 60px);
+
+    }
+
+    .work-slide {
+
+        padding: 30px 20px;
+
+    }
+
+    .work-slide h3 {
+
+        font-size: 27px;
+
+    }
+
+    .quote-section {
+
+        min-height: 50vh;
+
+        padding: 70px 20px;
+
+    }
+
+    .quote-section p {
+
+        font-size: 27px;
+
+    }
+
+}
