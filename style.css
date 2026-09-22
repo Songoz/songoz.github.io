@@ -102,10 +102,7 @@ body::before {
 ========================================================= */
 
 main {
-
-    width: min(1200px, calc(100% - 60px));
-   padding-side: 60px;
-
+    width: 70%;
     margin: 0 auto;
 
     background: #F3EAD4;
@@ -116,7 +113,6 @@ main {
 
     box-shadow:
         0 25px 70px rgba(0, 0, 0, 0.24);
-
 }
 
 
