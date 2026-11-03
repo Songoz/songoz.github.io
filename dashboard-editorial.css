@@ -1,0 +1,708 @@
+/* =========================================
+   EDITORIAL DASHBOARD PAGE
+   ========================================= */
+
+:root {
+    --page-cream: #F8F5ED;
+    --page-paper: #FFFEFA;
+    --page-olive: #4A5D23;
+    --page-orange: #CC6600;
+    --page-sage: #DCE2C8;
+    --page-ink: #292A24;
+    --page-muted: #77766D;
+    --page-line: rgba(41, 42, 36, 0.16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--page-cream);
+    color: var(--page-ink);
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+    position: relative;
+}
+
+/* Original portfolio paper texture */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("images/paper_texture.png");
+    background-repeat: repeat;
+    opacity: 0.045;
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.editorial-header {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background: rgba(248, 245, 237, 0.94);
+    border-bottom: 1px solid var(--page-line);
+}
+
+.editorial-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+}
+
+.editorial-header nav {
+    display: flex;
+    gap: 28px;
+}
+
+.editorial-header nav a {
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--page-muted);
+    transition: color 0.25s ease;
+}
+
+.editorial-header nav a:hover {
+    color: var(--page-orange);
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.editorial-hero {
+    position: relative;
+    min-height: 660px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 100px 8%;
+    isolation: isolate;
+}
+
+.hero-image-panel {
+    position: absolute;
+    inset: 0 0 0 42%;
+    z-index: -2;
+}
+
+.hero-image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        var(--page-cream) 0%,
+        rgba(248, 245, 237, 0.92) 15%,
+        rgba(248, 245, 237, 0.28) 75%,
+        rgba(41, 42, 36, 0.12) 100%
+    );
+}
+
+.editorial-hero-content {
+    width: 52%;
+    max-width: 650px;
+    position: relative;
+    z-index: 3;
+}
+
+.editorial-kicker {
+    display: block;
+    color: var(--page-orange);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.editorial-hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 500;
+    line-height: 1.08;
+    max-width: 680px;
+    margin: 0;
+}
+
+.editorial-hero h1 em,
+.project-heading h2 em,
+.intro-copy h2 em,
+.editorial-methods h2 em {
+    color: var(--page-olive);
+    font-weight: 500;
+}
+
+.editorial-hero-content > p {
+    max-width: 430px;
+    font-size: 14px;
+    color: var(--page-muted);
+    margin: 28px 0;
+}
+
+.editorial-link {
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--page-orange);
+    color: var(--page-olive);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.original-tree-placement {
+    position: absolute;
+    z-index: 4;
+    right: 7%;
+    bottom: 0;
+    width: min(38%, 470px);
+    height: 90%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+}
+
+/* This wrapper does not change the SVG itself. */
+.original-tree-placement .tree-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-index {
+    position: absolute;
+    left: 8%;
+    bottom: 28px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--page-muted);
+}
+
+
+/* =========================================
+   INTRODUCTION
+   ========================================= */
+
+.editorial-intro {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+    gap: 8%;
+    padding: 110px 12%;
+    background: var(--page-paper);
+    border-top: 1px solid var(--page-line);
+    border-bottom: 1px solid var(--page-line);
+}
+
+.intro-index span {
+    color: var(--page-orange);
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+}
+
+.intro-index p {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--page-muted);
+}
+
+.intro-copy h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(35px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 28px;
+}
+
+.intro-copy p {
+    max-width: 680px;
+    color: var(--page-muted);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PROJECT SECTIONS
+   ========================================= */
+
+.editorial-project-section {
+    padding: 110px 8%;
+}
+
+.project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--page-line);
+    margin-bottom: 55px;
+}
+
+.project-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.project-heading-note {
+    max-width: 310px;
+    color: var(--page-muted);
+    font-size: 12px;
+}
+
+.project-category {
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    color: var(--page-orange);
+}
+
+
+/* =========================================
+   DISCLOSURE FEATURE
+   ========================================= */
+
+.disclosure-feature {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 9%;
+    align-items: center;
+}
+
+.project-label {
+    color: var(--page-orange);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+}
+
+.disclosure-feature-copy h3,
+.project-story-copy h3,
+.business-analysis-copy h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.disclosure-feature-copy p,
+.project-story-copy p,
+.business-analysis-copy p {
+    color: var(--page-muted);
+    font-size: 13px;
+}
+
+.simulation-note {
+    padding-left: 15px;
+    border-left: 2px solid var(--page-orange);
+    font-size: 11px !important;
+}
+
+.disclosure-feature-visual {
+    background: var(--page-paper);
+    padding: 35px;
+    border: 1px solid var(--page-line);
+    box-shadow: 0 18px 55px rgba(45, 42, 30, 0.05);
+}
+
+.visual-topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--page-muted);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--page-line);
+}
+
+.visual-company {
+    display: grid;
+    grid-template-columns: 35px 1fr 25px;
+    align-items: center;
+    gap: 14px;
+    padding: 21px 0;
+    border-bottom: 1px solid var(--page-line);
+}
+
+.visual-company > span:first-child {
+    color: var(--page-orange);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+}
+
+.visual-company strong,
+.visual-company small {
+    display: block;
+}
+
+.visual-company strong {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.visual-company small {
+    color: var(--page-muted);
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+.visual-arrow {
+    color: var(--page-olive);
+}
+
+.dashboard-introduction {
+    margin-top: 100px;
+    padding: 45px;
+    background: var(--page-sage);
+}
+
+.dashboard-introduction h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.dashboard-introduction p {
+    font-size: 13px;
+    color: var(--page-muted);
+}
+
+
+/* =========================================
+   SECONDARY PROJECTS
+   ========================================= */
+
+.secondary-project {
+    background: var(--page-paper);
+    border-top: 1px solid var(--page-line);
+}
+
+.project-story-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 8%;
+    align-items: center;
+}
+
+.project-story-image {
+    min-height: 360px;
+    position: relative;
+    overflow: hidden;
+    background: #DCE2C8;
+    display: flex;
+    align-items: flex-start;
+    padding: 28px;
+}
+
+.project-story-image > span {
+    position: relative;
+    z-index: 2;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--page-olive);
+}
+
+.visual-contours {
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    background:
+        repeating-radial-gradient(
+            ellipse at 60% 55%,
+            transparent 0 20px,
+            rgba(74, 93, 35, 0.45) 21px 22px,
+            transparent 23px 42px
+        );
+}
+
+.method-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.method-tags span {
+    border: 1px solid var(--page-line);
+    padding: 7px 12px;
+    font-size: 9px;
+    color: var(--page-olive);
+}
+
+.business-analysis-layout {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 10%;
+    align-items: center;
+}
+
+.analysis-method-card {
+    background: var(--page-cream);
+    border: 1px solid var(--page-line);
+    padding: 32px;
+}
+
+.analysis-method-card > span {
+    display: block;
+    color: var(--page-orange);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+}
+
+.analysis-method-card div {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--page-line);
+    color: var(--page-orange);
+    font-size: 12px;
+}
+
+.analysis-method-card strong {
+    color: var(--page-ink);
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+
+/* =========================================
+   METHODS
+   ========================================= */
+
+.editorial-methods {
+    padding: 110px 8%;
+}
+
+.editorial-methods h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 500;
+    margin: 0 0 55px;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--page-line);
+    border-bottom: 1px solid var(--page-line);
+}
+
+.methods-grid > div {
+    padding: 28px 22px;
+    border-right: 1px solid var(--page-line);
+}
+
+.methods-grid > div:first-child {
+    padding-left: 0;
+}
+
+.methods-grid > div:last-child {
+    border-right: none;
+}
+
+.methods-grid span {
+    color: var(--page-orange);
+    font-size: 10px;
+}
+
+.methods-grid h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.methods-grid p {
+    color: var(--page-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.editorial-footer {
+    padding: 70px 8% 25px;
+    background: #292A24;
+    color: var(--page-cream);
+}
+
+.editorial-footer > div span {
+    color: #D99A52;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+}
+
+.editorial-footer h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 500;
+    max-width: 500px;
+}
+
+.editorial-footer > a {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 11px;
+    border-bottom: 1px solid #D99A52;
+    padding-bottom: 6px;
+}
+
+.editorial-footer > p {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    margin-top: 40px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .editorial-hero {
+        min-height: 580px;
+    }
+
+    .editorial-hero-content {
+        width: 65%;
+    }
+
+    .original-tree-placement {
+        right: 1%;
+        width: 42%;
+    }
+
+    .disclosure-feature,
+    .project-story-grid,
+    .business-analysis-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .methods-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .methods-grid > div:nth-child(2) {
+        border-right: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .editorial-header {
+        align-items: flex-start;
+        gap: 18px;
+        flex-direction: column;
+    }
+
+    .editorial-header nav {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .editorial-hero {
+        min-height: 700px;
+        align-items: flex-start;
+        padding: 75px 7%;
+    }
+
+    .hero-image-panel {
+        inset: 35% 0 0 0;
+    }
+
+    .hero-image-overlay {
+        background: linear-gradient(
+            180deg,
+            var(--page-cream),
+            rgba(248,245,237,0.15)
+        );
+    }
+
+    .editorial-hero-content {
+        width: 100%;
+    }
+
+    .original-tree-placement {
+        width: 65%;
+        height: 48%;
+        right: 4%;
+    }
+
+    .editorial-intro {
+        grid-template-columns: 1fr;
+        padding: 75px 7%;
+        gap: 25px;
+    }
+
+    .editorial-project-section,
+    .editorial-methods {
+        padding: 75px 7%;
+    }
+
+    .project-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .disclosure-feature-visual {
+        padding: 22px;
+    }
+
+    .dashboard-introduction {
+        padding: 28px;
+    }
+
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .methods-grid > div {
+        border-right: none;
+        border-bottom: 1px solid var(--page-line);
+        padding-left: 0;
+    }
+
+}
